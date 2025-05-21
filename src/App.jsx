@@ -1,21 +1,12 @@
 import { useState } from 'react'
 import './App.css'
+import Navbar from './components/Navbar'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
     <>
-      <div>
-        <h1 class="text-3xl font-bold underline">
-          Hello world!
-        </h1>
-      </div>
-      <p className="read-the-docs">
-        Hello in the Vite and React project
-      </p>
+      <Navbar />
+      <h1>Hello</h1>
     </>
-  )
+  );
 }
-
-export default App
