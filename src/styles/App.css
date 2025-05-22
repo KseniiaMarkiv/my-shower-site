@@ -1,0 +1,38 @@
+/* For Headings: Bold, modern sans-serif */
+.font-heading {
+  font-family: 'Inter', sans-serif; /* Or 'Montserrat', sans-serif; */
+  font-weight: 700; /* Bold */
+}
+
+/* For Subheadings or slightly less bold headings */
+.font-subheading {
+  font-family: 'Inter', sans-serif; /* Or 'Montserrat', sans-serif; */
+  font-weight: 600; /* Semi-bold */
+}
+
+/* For Body/Small text: Clean, highly readable sans-serif */
+.font-body {
+  font-family: 'Open Sans', sans-serif; /* Or 'Lato', sans-serif; */
+  font-weight: 400; /* Regular */
+  line-height: 1.6; /* Improve readability for body text */
+}
+
+/* For very small text, like captions or meta info */
+.font-small {
+  font-family: 'Open Sans', sans-serif; /* Or 'Lato', sans-serif; */
+  font-weight: 400; /* Regular */
+  font-size: 0.875rem; /* ~14px if base is 16px */
+}
+
+/* You can also set a global font for the entire body */
+body {
+  font-family: 'Open Sans', sans-serif; /* Default body font */
+  color: #333; /* Default text color */
+}
+
+/* And then override for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  /* You might want to adjust margin-top/bottom here too */
+}

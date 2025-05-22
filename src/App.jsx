@@ -19,6 +19,9 @@ export default function App() {
           Button as link
         </Button>
       </Stack>;
+      <p className="fs-1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, amet facilis.
+      </p>
     </>
   );
 }
