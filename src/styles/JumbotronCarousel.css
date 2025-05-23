@@ -1,0 +1,118 @@
+.jumbotron-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.jumbotron-img,
+.jumbotron-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.jumbotron-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: white;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron-caption .container .row > div {
+    max-width: 600px;
+    margin: 0;
+    padding: 0;
+    bottom: 300px;
+    left: 150px;
+    position: fixed;
+}
+
+.jumbotron-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.jumbotron-text {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1.25rem;
+}
+
+.jumbotron-buttons {
+  text-align: left;
+}
+
+.jumbotron-buttons .btn {
+  border-radius: 0;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.btn-learn-more:hover {
+  background-color: #ffffff7e;
+  color: #343434;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-contact-us:hover {
+  background-color: #ffffff7e;
+  color: #343434;
+  transition: all 0.3s ease-in-out;
+}
+
+
+            /* Media Queries */
+
+@media (max-width: 991.98px) {
+  .jumbotron-title {
+    font-size: 2.5rem;
+  }
+  .jumbotron-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .jumbotron-section {
+    height: 60vh;
+  }
+  .jumbotron-title {
+    font-size: 2rem;
+  }
+  .jumbotron-text {
+    font-size: 1rem;
+  }
+  .jumbotron-buttons .btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .jumbotron-title {
+    font-size: 1.75rem;
+  }
+  .jumbotron-text {
+    font-size: 0.9rem;
+  }
+  .jumbotron-buttons {
+    text-align: center;
+  }
+  .jumbotron-buttons .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
