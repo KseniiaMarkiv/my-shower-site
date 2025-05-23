@@ -18,7 +18,7 @@ export default function App() {
         <Button as="a" variant="success">
           Button as link
         </Button>
-      </Stack>;
+      </Stack>
       <p className="fs-1">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, amet facilis.
       </p>
