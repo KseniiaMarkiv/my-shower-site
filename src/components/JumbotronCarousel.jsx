@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Carousel, Container, Row, Col, Button } from 'react-bootstrap';
 import '../styles/JumbotronCarousel.css';
 
-import slideImage1 from '../assets/jumbotron-slide-1.png';
-import slideImage2 from '../assets/jumbotron-slide-2.jpg';
-import slideImage3 from '../assets/jumbotron-slide-3.jpg';
-import slideImage4 from '../assets/jumbotron-slide-4.png';
-import slideImage5 from '../assets/jumbotron-slide-5.jpg';
-import slideImage6 from '../assets/jumbotron-slide-6.png';
+import slideImage1 from '../assets/cropped-jumbotron-slide-2.jpg';
+import slideImage2 from '../assets/cropped-jumbotron-slide-1.png';
+import slideImage3 from '../assets/cropped-jumbotron-slide-3.jpg';
+import slideImage4 from '../assets/cropped-jumbotron-slide-4.png';
+import slideImage5 from '../assets/cropped-jumbotron-slide-5.jpg';
+import slideImage6 from '../assets/cropped-jumbotron-slide-6.png';
 
 
 function JumbotronCarousel() {
@@ -31,18 +31,18 @@ function JumbotronCarousel() {
             <Container>
               <Row className="justify-content-start">
                 <Col lg={8} md={10}>
-                  <h3 className="fs-1 jumbotron-title mb-4">Transform Your Space With Custom Installations</h3>
-                  <p className="jumbotron-text mb-4 fs-6">
-                    Enhance the beauty and functionality of your home or business with our expert installation services. From showers to mirrors and runs, we bring your vision to life.
-                  </p>
-                  <div className="jumbotron-buttons">
-                    <Button variant="light" className="btn-learn-more me-3">
-                      Learn More
-                    </Button>
-                    <Button variant="outline-light" className="btn-contact-us">
-                      Contact
-                    </Button>
-                  </div>
+                    <h3 className="fs-1 jumbotron-title mb-4">Transform Your Space With Custom Installations</h3>
+                    <p className="jumbotron-text mb-4 fs-6">
+                      Enhance the beauty and functionality of your home or business with our expert installation services. From showers to mirrors and runs, we bring your vision to life.
+                    </p>
+                    <div className="jumbotron-buttons">
+                      <Button variant="light" className="btn-learn-more me-3">
+                        Learn More
+                      </Button>
+                      <Button variant="outline-light" className="btn-contact-us">
+                        Contact
+                      </Button>
+                    </div>
                 </Col>
               </Row>
             </Container>
