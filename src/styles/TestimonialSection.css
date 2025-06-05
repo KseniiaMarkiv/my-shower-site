@@ -1,0 +1,122 @@
+.webflow-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.webflow-logo {
+  max-width: 120px;
+  height: auto;
+}
+
+.testimonial-section {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 4rem; 
+  height: 600px;
+}
+
+.testimonial-section .container {
+  max-height: 100%;
+  height: 100%;
+}
+
+.testimonial-section .row {
+  max-height: 100%;
+}
+
+.testimonial-section .col {
+  max-height: 100%;
+}
+
+
+.testimonial-section .carousel {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-section .carousel-control-prev,
+.testimonial-section .carousel-control-next {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.bi-arrow-left,
+.bi-arrow-right {
+  color: #555555ce;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.testimonial-section .carousel-control-prev:hover .bi-arrow-left,
+.testimonial-section .carousel-control-next:hover .bi-arrow-right {
+  color: #ffffff;
+}
+
+.testimonial-section .carousel-control-prev:hover,
+.testimonial-section .carousel-control-next:hover {
+  background-color: #c0c0c0;
+  border-color: #adb5bd;
+}
+
+.testimonial-content {
+  max-width: 800px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bolder;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.testimonial-avatar-placeholder  {
+  height: 42px;
+}
+
+.avatar-inner-circle {
+  font-size: 30px;
+  color: #a5a5a5;
+}
+
+.carousel-indicators {
+  bottom: 20px;
+}
+
+
+.testimonial-section .carousel-indicators {
+  position: absolute;
+  top: 16rem;
+  left: 0;
+  right: 0;
+  margin: 0;
+  justify-content: center;
+  z-index: 15;
+}
+
+.testimonial-section .carousel-indicators [data-bs-target] {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #dee2e6;
+  border: none;
+  opacity: 1;
+  margin: 0 4px;
+  transition: background-color 0.2s ease;
+}
+
+.testimonial-section .carousel-indicators .active {
+  background-color: #212529;
+}
