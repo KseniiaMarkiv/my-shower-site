@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
 
 import logo from '../assets/logo.png';
+import '../styles/Navbar.css';
 
 const CustomNavbar = () => {
 
