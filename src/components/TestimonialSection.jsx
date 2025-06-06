@@ -34,7 +34,7 @@ function TestimonialSection() {
       <Container>
         <Row className="justify-content-center">
           <Col className="text-center">
-            <div className="webflow-logo-container mb-5">
+            <div className="webflow-logo-container mb-3">
               <img src={WebflowLogo} alt="Webflow Logo" className="webflow-logo" />
             </div>
 
@@ -43,24 +43,26 @@ function TestimonialSection() {
               indicators={true}
               interval={7000}
               fade={false}
-              prevIcon={<i className="bi bi-arrow-left fs-4 arrows" />}
-              nextIcon={<i className="bi bi-arrow-right fs-4 arrows" />}
+              prevIcon={<i className="bi bi-arrow-left arrows" />}
+              nextIcon={<i className="bi bi-arrow-right arrows" />}
             >
               {testimonials.map((testimonial) => (
                 <Carousel.Item key={testimonial.id}>
                   <div className="testimonial-content d-inline-block mx-auto text-center">
-                    <p className="testimonial-quote mb-5">
-                      {testimonial.quote}
-                    </p>
+                    <p className="testimonial-quote mb-0">{testimonial.quote}</p>
 
-                    <div className="testimonial-avatar-placeholder d-flex align-items-center justify-content-center mx-auto mb-0">
+                    <div className="testimonial-avatar-placeholder d-flex align-items-center justify-content-center mx-auto">
                       <div className="avatar-inner-circle">
                         <i className="bi bi-person-circle fs-1"></i>
                       </div>
                     </div>
 
-                    <p className="testimonial-author fw-bold my-0 fs-6">{testimonial.author}</p>
-                    <p className="testimonial-title text-muted fs-6">{testimonial.title}</p>
+                    <div className="spacer" />
+
+                    <div className="testimonial-meta">
+                      <p className="testimonial-author fw-bold my-0 fs-6">{testimonial.author}</p>
+                      <p className="testimonial-title text-muted fs-6">{testimonial.title}</p>
+                    </div>
                   </div>
                 </Carousel.Item>
               ))}
