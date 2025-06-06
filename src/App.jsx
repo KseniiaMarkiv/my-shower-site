@@ -4,6 +4,7 @@ import CustomNavbar from './components/Navbar'
 import JumbotronCarousel from './components/JumbotronCarousel'
 import ServicesSection from './components/ServicesSection'
 import TestimonialSection from './components/TestimonialSection'
+import QuoteSection from './components/QuoteSection'
 
 import { Stack, Button } from 'react-bootstrap';
 
@@ -38,6 +39,8 @@ export default function App() {
         showButtons={true}
       />
       <TestimonialSection />
+
+      <QuoteSection />
 
       <h1>Hello</h1>
       <Stack direction="horizontal" gap={2}>
