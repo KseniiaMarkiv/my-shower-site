@@ -6,7 +6,9 @@ import ServicesSection from './components/ServicesSection'
 import TestimonialSection from './components/TestimonialSection'
 import QuoteSection from './components/QuoteSection'
 
-import { Stack, Button } from 'react-bootstrap';
+import showerImg from './assets/services/shower.webp';
+import mirrorImg from './assets/services/mirror.webp';
+import railingImg from './assets/services/railing.webp';
 
 // Data for your services sections
 const mainServices = [
@@ -27,6 +29,25 @@ const mainServices = [
   },
 ];
 
+const professionalServices = [
+  {
+    name: "Shower Installations Tailored to Your Needs",
+    description: "Experience luxury and functionality with our custom shower solutions!",
+    image: showerImg,
+  },
+  {
+    name: "Stunning Mirror Installations for Every Space",
+    description: "Enhance your taste and style with our stunning mirror designs.",
+    image: mirrorImg,
+  },
+  {
+    name: "Durable Railing Installations for Safety and Style",
+    description: "Our railings combine safety with aesthetic appeal",
+    image: railingImg,
+  },
+];
+
+
 export default function App() {
   return (
     <>
@@ -39,21 +60,13 @@ export default function App() {
         showButtons={true}
       />
       <TestimonialSection />
-
+      <ServicesSection
+        title="Explore Our Professional Installation Services"
+        subtitle="Transform your space with our expert installations. From showers to mirrors and railings, we bring your vision to life."
+        services={professionalServices}
+        showButtons={true} // The image shows buttons here too
+      />
       <QuoteSection />
-
-      <h1>Hello</h1>
-      <Stack direction="horizontal" gap={2}>
-        <Button as="a" variant="primary">
-          Button as link
-        </Button>
-        <Button as="a" variant="success">
-          Button as link
-        </Button>
-      </Stack>
-      <p className="fs-1">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, amet facilis.
-      </p>
     </>
   );
 }

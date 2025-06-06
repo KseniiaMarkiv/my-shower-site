@@ -1,0 +1,39 @@
+.w-700 {
+  width: 700px;
+}
+
+.w-900 {
+  width: 900px;
+}
+
+        /* Media Queries */
+
+@media (max-width: 991.98px) {
+  .w-700 {
+    width: 500px;
+  }
+
+  .w-900 {
+    width: 700px;
+  }
+}
+
+@media (max-width: 759.98px) {
+  .w-700 {
+    width: 300px;
+  }
+
+  .w-900 {
+    width: 500px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .w-700 {
+    width: 200px;
+  }
+
+  .w-900 {
+    width: 300px;
+  }
+}

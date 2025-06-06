@@ -58,3 +58,9 @@
 .borderless-btn {
   border: none !important;
 }
+
+.service-card-img {
+  max-height: 180px;
+  width: 100%;
+  object-fit: cover;
+}

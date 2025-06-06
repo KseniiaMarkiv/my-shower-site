@@ -10,10 +10,10 @@ function ServicesSection({ subheading, title, subtitle, services, showButtons = 
     <section className="services-section py-5 my-5">
       <Container>
         <Row className="text-center mb-5">
-          <Col>
+          <Col className="d-flex flex-column align-items-center">
             {subheading && <p className="text-uppercase fw-bold text-muted mb-2 small">{subheading}</p>}
-            <h2 className="display-4 fw-bold">{title}</h2>
-            <p className="lead text-muted px-lg-5">{subtitle}</p>
+            <h2 className="display-4 fw-bold w-700">{title}</h2>
+            <p className="lead text-muted px-lg-5 w-900">{subtitle}</p>
           </Col>
         </Row>
         <Row className="justify-content-center g-4 my-5">
@@ -21,9 +21,17 @@ function ServicesSection({ subheading, title, subtitle, services, showButtons = 
             <Col md={6} lg={4} key={index} className="d-flex">
               <Card className="shadow-sm border-0 flex-fill">
                 <div className="service-icon-container text-center d-flex align-items-center justify-content-center">
-                  <div className="icon-inner-box d-flex align-items-center justify-content-center">
-                    <FontAwesomeIcon icon={faCube} className="fs-1 text-secondary-emphasis" />
-                  </div>
+                  {service.image ? (
+                    <img
+                      src={service.image}
+                      alt={service.name}
+                      className="service-card-img"
+                    />
+                  ) : (
+                    <div className="icon-inner-box d-flex align-items-center justify-content-center">
+                      <FontAwesomeIcon icon={faCube} className="fs-1 text-secondary-emphasis" />
+                    </div>
+                  )}
                 </div>
                 <Card.Body className="text-center pb-4">
                   <Card.Title className="fw-bold fs-4 mb-3">{service.name}</Card.Title>

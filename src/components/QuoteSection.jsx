@@ -15,7 +15,7 @@ function QuoteSection() {
             </p>
           </Col>
           <Col md={4} className="text-md-end text-center">
-            <Button variant="light" className="me-3 mb-2 mb-md-0 quote-btn request">Request A Quote</Button>
+            <Button variant="light" className="me-3 quote-btn request">Request A Quote</Button>
             <Button variant="outline-light quote-btn contact">Contact</Button>
           </Col>
         </Row>

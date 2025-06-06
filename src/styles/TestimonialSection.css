@@ -166,17 +166,7 @@
 
           /* Media Queries */
 
-@media (max-width: 1199px) {
-  .carousel-inner {
-    width: 80%;
-  }
-}
-
 @media (max-width: 991.98px) {
-  .carousel-inner {
-    width: 70%;
-  }
-
   .testimonial-section .carousel-control-prev,
   .testimonial-section .carousel-control-next {
     top: 45px;
