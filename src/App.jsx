@@ -5,10 +5,11 @@ import JumbotronCarousel from './components/JumbotronCarousel'
 import ServicesSection from './components/ServicesSection'
 import TestimonialSection from './components/TestimonialSection'
 import QuoteSection from './components/QuoteSection'
+import OpeningSoon from './components/OpeningSoon'
 
-import showerImg from './assets/services/shower.webp';
-import mirrorImg from './assets/services/mirror.webp';
-import railingImg from './assets/services/railing.webp';
+import showerImg from './assets/services/shower.webp'
+import mirrorImg from './assets/services/mirror.webp'
+import railingImg from './assets/services/railing.webp'
 
 // Data for your services sections
 const mainServices = [
@@ -47,26 +48,52 @@ const professionalServices = [
   },
 ];
 
+const isDev = import.meta.env.MODE === 'development';
 
 export default function App() {
+  const [showComingSoon, setShowComingSoon] = useState(!isDev);
+
+  const renderDevToggle = () => {
+    return isDev ? (
+      <div className="dev-toggle-panel" style={{ top: 130 }}>
+        <label style={{ marginRight: '0.5rem' }}>
+          <strong>Show:</strong> {showComingSoon ? 'Coming Soon' : 'Full Site'}
+        </label>
+        <button
+          className="btn btn-sm btn-primary"
+          onClick={() => setShowComingSoon(prev => !prev)}
+        >
+          Toggle
+        </button>
+      </div>
+    ) : null;
+  };
+
   return (
     <>
-      <CustomNavbar />
-      <JumbotronCarousel />
-      <ServicesSection
-        title="Explore Our Installation Services"
-        subtitle="Transform your space with our expert installation services. From showers to mirrors and railings, we bring your vision to life."
-        services={mainServices}
-        showButtons={true}
-      />
-      <TestimonialSection />
-      <ServicesSection
-        title="Explore Our Professional Installation Services"
-        subtitle="Transform your space with our expert installations. From showers to mirrors and railings, we bring your vision to life."
-        services={professionalServices}
-        showButtons={true} // The image shows buttons here too
-      />
-      <QuoteSection />
+      {renderDevToggle()}
+      {showComingSoon ? (
+        <OpeningSoon />
+      ) : (
+        <>
+          <CustomNavbar />
+          <JumbotronCarousel />
+          <ServicesSection
+            title="Explore Our Installation Services"
+            subtitle="Transform your space with our expert installation services. From showers to mirrors and railings, we bring your vision to life."
+            services={mainServices}
+            showButtons={true}
+          />
+          <TestimonialSection />
+          <ServicesSection
+            title="Explore Our Professional Installation Services"
+            subtitle="Transform your space with our expert installations. From showers to mirrors and railings, we bring your vision to life."
+            services={professionalServices}
+            showButtons={true}
+          />
+          <QuoteSection />
+        </>
+      )}
     </>
   );
 }
