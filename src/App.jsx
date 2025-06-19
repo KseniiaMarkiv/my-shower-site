@@ -79,6 +79,7 @@ export default function App() {
           <CustomNavbar />
           <JumbotronCarousel />
           <ServicesSection
+            id="services-short"
             title="Explore Our Installation Services"
             subtitle="Transform your space with our expert installation services. From showers to mirrors and railings, we bring your vision to life."
             services={mainServices}
@@ -86,12 +87,13 @@ export default function App() {
           />
           <TestimonialSection />
           <ServicesSection
-            title="Explore Our Professional Installation Services"
+            id="services-professional"
+            title="Explore Our Professional Installation Services with Tempered Glass"
             subtitle="Transform your space with our expert installations. From showers to mirrors and railings, we bring your vision to life."
             services={professionalServices}
             showButtons={true}
           />
-          <QuoteSection />
+          <QuoteSection id="quote" />
         </>
       )}
     </>

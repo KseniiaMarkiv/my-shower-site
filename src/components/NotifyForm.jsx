@@ -27,7 +27,7 @@ const NotifyForm = () => {
       if (res.status === 201 || res.status === 200) {
         setStatus("success");
         setToastVariant("info");
-        setToastMessage("Thanks! We'll notify you.");
+        setToastMessage("Thanks! You're on our launch list. We'll notify you.");
         setEmail(""); // clear input on success
       }
     } catch (err) {

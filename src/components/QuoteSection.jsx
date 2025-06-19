@@ -3,9 +3,9 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import '../styles/QuoteSection.css'; // You might need to create this CSS file
 
-function QuoteSection() {
+const QuoteSection = ({ id }) => {
   return (
-    <section className="quote-section py-5 bg-dark text-white d-flex align-items-center">
+    <section id={id} className="quote-section py-5 bg-dark text-white d-flex align-items-center">
       <Container>
         <Row className="align-items-center">
           <Col md={8}>

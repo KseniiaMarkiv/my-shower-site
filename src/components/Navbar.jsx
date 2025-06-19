@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
 
 import logo from '../assets/logo.png';
@@ -24,29 +22,35 @@ const CustomNavbar = () => {
 
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">
         <Nav className="ms-lg-5 text-secondary gap-4"> 
-          <Nav.Link href="#home-services" className='text-center'>Home Services</Nav.Link>
+          <Nav.Link href="#home" className='text-center'>Home</Nav.Link>
           <Nav.Link href="#about-us" className='text-center'>About Us</Nav.Link>
           <Nav.Link href="#contact-us" className='text-center'>Contact Us</Nav.Link>
           {/* For 'More Options' with a dropdown */}
           <NavDropdown title="More Options" id="more-options-dropdown" className="text-center">
-            <NavDropdown.Item href="#action/1" className="text-center">Option 1</NavDropdown.Item>
-            <NavDropdown.Item href="#action/2" className="text-center">Option 2</NavDropdown.Item>
+            <NavDropdown.Item href="#services-short" className="text-center">Installation Types</NavDropdown.Item>
+            <NavDropdown.Item href="#services-professional" className="text-center">Our Services</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3" className="text-center">Another Option</NavDropdown.Item>
+            <NavDropdown.Item href="#gallery" className="text-center">
+              Gallery
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#how-it-works" className="text-center">
+              How It Works
+            </NavDropdown.Item>
           </NavDropdown>
         </Nav>
 
         {/* Buttons on the far right */}
         <Nav className="ms-lg-auto pe-lg-5 nav-button"> 
           <Button
+            href="#quote"
             variant="outline-dark" 
-            className="me-lg-2 px-4 py-1 border border-gray-400 text-sm rounded-0" 
+            className="custom-estimate-button me-lg-2 px-4 py-1 border border-gray-400 text-sm rounded-0" 
           >
-            Join
+            Get a Free Quote
           </Button>
           <Button
             variant="dark" 
-            className="px-4 py-1 text-sm rounded-0" 
+            className="navbar-contact-button px-4 py-1 text-sm rounded-0" 
           >
             Contact
           </Button>

@@ -4,14 +4,6 @@
   padding: 0.8rem 0; /* Adjust vertical padding */
 }
 
-.custom-logo {
-  color: #fff !important; /* White logo text */
-  font-size: 1.8rem; /* Larger font size */
-  font-family: 'Georgia', serif; /* Example font, replace with your custom font if you have one */
-  /* If you have a specific custom font, you'd import it globally and apply it here */
-  /* e.g., font-family: 'YourCustomLogoFont', cursive; */
-}
-
 /* Navigation links */
 .custom-nav-links .nav-link {
   color: #c4c4c4 !important; /* Light gray for links */
