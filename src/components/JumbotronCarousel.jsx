@@ -36,7 +36,7 @@ function JumbotronCarousel() {
                       {slide.text}
                     </p>
                     <div className="jumbotron-buttons">
-                      <Button variant="light" className="btn-learn-more me-3">
+                      <Button variant="light" href="#how-it-works" className="btn-learn-more me-3">
                         Learn More
                       </Button>
                       {/* Note: Original slide 6 had variant="outline-dark" */}

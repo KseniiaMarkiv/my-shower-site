@@ -6,6 +6,10 @@ import ServicesSection from './components/ServicesSection'
 import TestimonialSection from './components/TestimonialSection'
 import QuoteSection from './components/QuoteSection'
 import OpeningSoon from './components/OpeningSoon'
+import HowItWorksSection from './components/HowItWorksSection.jsx';
+import PortfolioSection from './components/PortfolioSection.jsx';
+import AboutUsAndFooter from './components/AboutUsAndFooter.jsx';
+
 
 import showerImg from './assets/services/shower.webp'
 import mirrorImg from './assets/services/mirror.webp'
@@ -80,12 +84,14 @@ export default function App() {
           <JumbotronCarousel />
           <ServicesSection
             id="services-short"
+            className="py-5 my-5"
             title="Explore Our Installation Services"
             subtitle="Transform your space with our expert installation services. From showers to mirrors and railings, we bring your vision to life."
             services={mainServices}
             showButtons={true}
           />
           <TestimonialSection />
+          <HowItWorksSection />
           <ServicesSection
             id="services-professional"
             title="Explore Our Professional Installation Services with Tempered Glass"
@@ -93,7 +99,9 @@ export default function App() {
             services={professionalServices}
             showButtons={true}
           />
+          <PortfolioSection />
           <QuoteSection id="quote" />
+          <AboutUsAndFooter />
         </>
       )}
     </>

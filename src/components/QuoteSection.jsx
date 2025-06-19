@@ -9,7 +9,7 @@ const QuoteSection = ({ id }) => {
       <Container>
         <Row className="align-items-center">
           <Col md={8}>
-            <h2 className="display-5 fw-bold mb-3">Get Your Free Quote Today</h2>
+            <h2 className="display-5 fw-bold mb-3">Get Your Free Quote</h2>
             <p className="lead mb-4">
               Ready to transform your space? Contact us now for a personalized quote or more information about our services!
             </p>

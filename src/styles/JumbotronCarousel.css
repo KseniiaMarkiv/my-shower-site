@@ -39,6 +39,11 @@
   filter: brightness(60%);
 }
 
+.jumbotron-img:hover,
+.jumbotron-video:hover {
+  filter: brightness(100%);
+}
+
 .carousel-item {
   min-height: 100vh;
 }
