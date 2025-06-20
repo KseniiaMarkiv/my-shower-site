@@ -7,6 +7,7 @@ import QuoteSection from './components/QuoteSection'
 import HowItWorksSection from './components/HowItWorksSection.jsx'
 import PortfolioSection from './components/PortfolioSection.jsx'
 import AboutUsAndFooter from './components/AboutUsAndFooter.jsx'
+import ScrollToTop from './components/ScrollToTop'
 
 import showerImg from './assets/services/shower.webp'
 import mirrorImg from './assets/services/mirror.webp'
@@ -74,6 +75,8 @@ export default function App() {
       <PortfolioSection />
       <QuoteSection id="quote" />
       <AboutUsAndFooter />
+
+      <ScrollToTop /> 
     </>
   );
 }
