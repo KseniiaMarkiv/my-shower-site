@@ -24,12 +24,12 @@ const mainServices = [
   },
   {
     name: "Mirror Installations for Style and Elegance",
-    description: "Enhance your space with our stunning mirror designs.",
+    description: "We professionally install mirrors of any size to match your interior vision — no matter the style.",
     link: "#"
   },
   {
     name: "Railing Installations for Safety and Aesthetics",
-    description: "Our railings combine safety with modern design.",
+    description: "We install railings that match your space — indoors & outdoors — strong, safe, and built to last.",
     link: "#"
   },
 ];

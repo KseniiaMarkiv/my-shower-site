@@ -63,7 +63,15 @@
 }
 
 .service-card-img {
-  max-height: 180px;
+  max-height: 240px;
   width: 100%;
   object-fit: cover;
+}
+
+.card-body {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
 }
