@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
 
-import logo from '../assets/logo.png';
+import logo from '../assets/thanks_support_small_business.png';
 import '../styles/Navbar.css';
 
 const CustomNavbar = () => {
@@ -20,7 +20,7 @@ const CustomNavbar = () => {
     <Navbar
       expand="lg"
       fixed="top"
-      className={`main-navbar py-3 ${scrolled ? 'navbar-blur' : ''}`}
+      className={`main-navbar ${scrolled ? 'navbar-blur' : ''}`}
     >
       {/* Logo */}
       <Navbar.Brand href="#home" className="logo-font text-lg text-dark ps-5">
@@ -28,7 +28,7 @@ const CustomNavbar = () => {
           src={logo}
           alt="Company Logo"
           width="auto"
-          height="40"
+          height="70"
           className="d-inline-block align-top"
         />
       </Navbar.Brand>
