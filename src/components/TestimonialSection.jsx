@@ -4,48 +4,49 @@ import '../styles/TestimonialSection.css';
 
 import GoogleLogo from '../assets/google-my-business.svg';
 
-function TestimonialSection() {
-const testimonials = [
-  {
-    id: 1,
-    quote: "“The frameless shower installation completely transformed our bathroom. The quality and attention to detail really stood out.”",
-    author: "Sample Client",
-    title: "Residential Project, Lakewood NJ",
-    avatar: "https://via.placeholder.com/80x80?text=SC"
-  },
-  {
-    id: 2,
-    quote: "“We needed custom mirrors for a salon remodel. The team was easy to work with and delivered beautiful results.”",
-    author: "Sample Business Owner",
-    title: "Commercial Interior, Cherry Hill NJ",
-    avatar: "https://via.placeholder.com/80x80?text=BO"
-  },
-  {
-    id: 3,
-    quote: "“Our new glass railings on the balcony look sleek and feel super sturdy. Great upgrade to our space!”",
-    author: "Sample Homeowner",
-    title: "Exterior Project, Jersey City NJ",
-    avatar: "https://via.placeholder.com/80x80?text=HO"
-  },
-  {
-    id: 4,
-    quote: "“Custom mirror wall was installed perfectly and added so much light to our hallway. Will definitely use again.”",
-    author: "Sample Testimonial",
-    title: "Residential Client, Edison NJ",
-    avatar: "https://via.placeholder.com/80x80?text=TC"
-  },
-  {
-    id: 5,
-    quote: "“Ми замовили матове скло для душової. Все пройшло чітко за термінами. Гарно, зручно та безпечно.”",
-    author: "Приклад клієнта",
-    title: "Демонстраційний відгук, Howell NJ",
-    avatar: "https://via.placeholder.com/80x80?text=PK"
-  }
-];
+const TestimonialSection = ({ id }) => {
+
+  const testimonials = [
+    {
+      id: 1,
+      quote: "“The frameless shower installation completely transformed our bathroom. The quality and attention to detail really stood out.”",
+      author: "Sample Client",
+      title: "Residential Project, Lakewood NJ",
+      avatar: "https://via.placeholder.com/80x80?text=SC"
+    },
+    {
+      id: 2,
+      quote: "“We needed custom mirrors for a salon remodel. The team was easy to work with and delivered beautiful results.”",
+      author: "Sample Business Owner",
+      title: "Commercial Interior, Cherry Hill NJ",
+      avatar: "https://via.placeholder.com/80x80?text=BO"
+    },
+    {
+      id: 3,
+      quote: "“Our new glass railings on the balcony look sleek and feel super sturdy. Great upgrade to our space!”",
+      author: "Sample Homeowner",
+      title: "Exterior Project, Jersey City NJ",
+      avatar: "https://via.placeholder.com/80x80?text=HO"
+    },
+    {
+      id: 4,
+      quote: "“Custom mirror wall was installed perfectly and added so much light to our hallway. Will definitely use again.”",
+      author: "Sample Testimonial",
+      title: "Residential Client, Edison NJ",
+      avatar: "https://via.placeholder.com/80x80?text=TC"
+    },
+    {
+      id: 5,
+      quote: "“Ми замовили матове скло для душової. Все пройшло чітко за термінами. Гарно, зручно та безпечно.”",
+      author: "Приклад клієнта",
+      title: "Демонстраційний відгук, Howell NJ",
+      avatar: "https://via.placeholder.com/80x80?text=PK"
+    }
+  ];
 
 
   return (
-    <section className="testimonial-section py-5">
+    <section id={id} className="testimonial-section py-5">
       <Container>
         <Row className="justify-content-center">
           <Col className="text-center">

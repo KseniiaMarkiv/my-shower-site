@@ -63,7 +63,7 @@ export default function App() {
         services={mainServices}
         showButtons={true}
       />
-      <TestimonialSection />
+      <TestimonialSection id="testimonials" />
       <HowItWorksSection />
       <ServicesSection
         id="services-professional"

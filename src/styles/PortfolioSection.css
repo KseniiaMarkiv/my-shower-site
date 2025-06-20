@@ -1,3 +1,7 @@
 #portfolio {
   height: 80vh;
 }
+
+#portfolio img {
+  max-height: 550px;
+}

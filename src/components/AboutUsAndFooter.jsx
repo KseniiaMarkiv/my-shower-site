@@ -5,16 +5,44 @@ export default function AboutUsAndFooter() {
     <footer id="about-us" className="footer-white pt-5 pb-4 my-5">
       <div className="container">
 
-        {/* === ABOUT TEXT === */}
-        <div className="mb-4">
-          <h4 className="text-dark mb-3">About MyGlassStyle</h4>
-          <p className="text-muted mb-0">
-            We specialize in custom installation of tempered glass showers, mirrors, railings, and more. Our mission is to bring modern elegance to every space.  
-            We work with premium-grade glass and hardware to ensure durability, safety, and sleek aesthetics in every project.  
-            All products are custom-made to fit your space, with careful attention to detail from measurement to installation.  
-            Whether it's a residential bathroom or a commercial railing, we deliver precision, quality, and style.
+        {/* === ABOUT + CONTACT SPLIT === */}
+        <div className="row mb-4">
+          {/* === ABOUT US === */}
+          <div className="col-md-8 pe-5 mb-4 about-us-div text-lg-start text-md-center">
+            <h4 className="text-dark mb-3">About MyGlassStyle</h4>
+            <p className="text-muted mb-0">
+              <strong className="text-decoration-underline">MyGlassStyle</strong> specializes in the custom installation of tempered glass showers, railings, mirrors, and shelving.
+              We work with premium-grade glass and hardware to ensure strength, safety, and sleek aesthetics in every project. <br /><br />
+              From clear to frosted glass, all products are made to order. We take pride in delivering clean, precise, and punctual service — always with attention to detail.
+            </p>
+          </div>
 
-          </p>
+          {/* === CONTACT US === */}
+          <div className="col-md-4 mb-4">
+            <h4 className="text-dark mb-3">Contact Us</h4>
+            <p className="text-muted mb-3">
+              You got a project in mind and you need a free measurement? <br /> Reach out today!
+            </p>
+            <ul className="list-unstyled text-muted">
+              <li><i className="bi bi-envelope me-2"></i>
+                <a
+                  href="mailto:myglassstyle@gmail.com"
+                  className="text-muted text-decoration-none"
+                >
+                  myglassstyle@gmail.com
+                </a>
+              </li>
+              <li><i className="bi bi-telephone me-2"></i>
+                <a
+                  href="sms:+17328142159"
+                  className="text-muted text-decoration-none"
+                >
+                  (732) 814-21-59
+                </a>
+              </li>
+              <li><i className="bi bi-geo-alt me-2"></i>New Jersey, USA</li>
+            </ul>
+          </div>
         </div>
 
         <hr className="my-4 border-secondary" />

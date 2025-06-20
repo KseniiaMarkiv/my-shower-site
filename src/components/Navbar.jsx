@@ -38,8 +38,8 @@ const CustomNavbar = () => {
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">
         <Nav className="ms-lg-5 text-secondary gap-4">
           <Nav.Link href="#home" className="text-center">Home</Nav.Link>
-          <Nav.Link href="#about-us" className="text-center">About Us</Nav.Link>
-          <Nav.Link href="#contact-us" className="text-center">Contact Us</Nav.Link>
+          <Nav.Link href="#testimonials" className="text-center">Testimonials</Nav.Link>
+          <Nav.Link href="#about-us" className="text-center">Contact Us</Nav.Link>
 
           <NavDropdown title="More Options" id="more-options-dropdown" className="text-center">
             <NavDropdown.Item href="#services-short" className="text-center">Installation Types</NavDropdown.Item>
