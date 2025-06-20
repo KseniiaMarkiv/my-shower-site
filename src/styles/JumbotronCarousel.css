@@ -37,11 +37,13 @@
   object-fit: cover;
   object-position: center;
   filter: brightness(60%);
+  transition: all 0.3s ease-in-out;
 }
 
 .jumbotron-img:hover,
 .jumbotron-video:hover {
   filter: brightness(100%);
+  transition: all 0.3s ease-in-out;
 }
 
 .carousel-item {

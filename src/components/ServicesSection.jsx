@@ -19,7 +19,7 @@ function ServicesSection({ id, subheading, title, subtitle, services, showButton
         <Row className="justify-content-center g-4 my-5">
           {services.map((service, index) => (
             <Col md={6} lg={4} key={index} className="d-flex">
-              <Card className="shadow-sm border-0 flex-fill text-bg-light">
+              <Card className="card-height shadow-sm border-0 flex-fill">
                 <div className="service-icon-container text-center d-flex align-items-center justify-content-center">
                   {service.image ? (
                     <img
