@@ -40,9 +40,19 @@ function JumbotronCarousel() {
                         Learn More
                       </Button>
                       {/* Note: Original slide 6 had variant="outline-dark" */}
-                      <Button variant="outline-light" className="btn-contact-us">
-                        Contact
-                      </Button>
+                      <a
+                        href="mailto:myglassstyle@gmail.com"
+                        onClick={() => {
+                          console.log('Contact button clicked inside Jumbotron');
+                        }}
+                      >
+                        <Button
+                          variant="outline-light" 
+                          className="btn-contact-us"
+                        >
+                          Contact
+                        </Button>
+                      </a>
                     </div>
                   </Col>
                 </Row>

@@ -45,9 +45,19 @@ function ServicesSection({ id, subheading, title, subtitle, services, showButton
           <Row className="text-center py-5 my-5">
             <Col>
               <Button variant="outline-dark" href="#how-it-works" className="me-3">Learn More</Button>
-              <Button variant="outline-dark" className="borderless-btn">
-                Contact <i className="bi bi-chevron-right ms-2"></i>
-              </Button>
+              <a
+                href="mailto:myglassstyle@gmail.com"
+                onClick={() => {
+                  console.log('Contact button clicked inside Services');
+                }}
+              >
+                <Button
+                  variant="outline-dark"
+                  className="borderless-btn"
+                >
+                  Contact <i className="bi bi-chevron-right ms-2"></i>
+                </Button>
+              </a>
             </Col>
           </Row>
         )}

@@ -72,7 +72,7 @@ export default function App() {
         services={professionalServices}
         showButtons={true}
       />
-      <PortfolioSection />
+      <PortfolioSection id="portfolio" />
       <QuoteSection id="quote" />
       <AboutUsAndFooter />
 

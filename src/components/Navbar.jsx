@@ -45,7 +45,7 @@ const CustomNavbar = () => {
             <NavDropdown.Item href="#services-short" className="text-center">Installation Types</NavDropdown.Item>
             <NavDropdown.Item href="#services-professional" className="text-center">Our Services</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#gallery" className="text-center">Gallery</NavDropdown.Item>
+            <NavDropdown.Item href="#portfolio" className="text-center">Gallery</NavDropdown.Item>
             <NavDropdown.Item href="#how-it-works" className="text-center">How It Works</NavDropdown.Item>
           </NavDropdown>
         </Nav>
@@ -59,12 +59,19 @@ const CustomNavbar = () => {
           >
             Get a Free Quote
           </Button>
-          <Button
-            variant="dark"
-            className="navbar-contact-button px-4 py-1 text-sm rounded-0"
+          <a
+            href="mailto:myglassstyle@gmail.com"
+            onClick={() => {
+              console.log('Contact button clicked inside Navbar');
+            }}
           >
-            Contact
-          </Button>
+            <Button
+              variant="dark"
+              className="navbar-contact-button px-4 py-1 text-sm rounded-0"
+            >
+              Contact
+            </Button>
+          </a>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

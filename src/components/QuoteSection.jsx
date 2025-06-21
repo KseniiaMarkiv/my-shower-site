@@ -16,7 +16,19 @@ const QuoteSection = ({ id }) => {
           </Col>
           <Col md={4} className="text-md-end text-center">
             <Button variant="light" className="me-3 quote-btn request">Request A Quote</Button>
-            <Button variant="outline-light quote-btn contact">Contact</Button>
+            <a
+              href="mailto:myglassstyle@gmail.com"
+              onClick={() => {
+                console.log('Contact button clicked inside Services');
+              }}
+            >
+              <Button
+                variant="outline-light"
+                className="quote-btn contact"
+              >
+                Contact
+              </Button>
+            </a>
           </Col>
         </Row>
       </Container>
