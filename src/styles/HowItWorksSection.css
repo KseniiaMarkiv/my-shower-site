@@ -1,4 +1,76 @@
+.how-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
 
+.how-step {
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  opacity: 0.4;
+  transition: all 0.4s ease-in-out;
+}
+
+.how-step.active {
+  opacity: 1;
+}
+
+.step-circle {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 0.5rem auto;
+  border-radius: 50%;
+  background-color: #eaeaea;
+  color: #D2D2D2;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 50px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.how-step.active .step-circle {
+  color: #828282;
+  background-color: #f5f5f5;
+}
+
+.step-icon {
+  font-size: 2rem;
+  color: #D2D2D2;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.how-step.active .step-icon {
+  color: #828282;
+}
+
+.step-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  color: #D2D2D2;
+  transition: color 0.3s;
+}
+
+.how-step.active .step-title {
+  color: #212529;
+}
+
+.step-desc {
+  font-size: 1rem;
+  color: #D2D2D2;
+  transition: color 0.3s;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.how-step.active .step-desc {
+  color: #212529;
+}
+
+/* Optional padding and spacing */
 #how-it-works {
-  height: 80vh;
+  background-color: #f8f9fa;
 }
