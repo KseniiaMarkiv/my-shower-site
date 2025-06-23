@@ -1,76 +1,139 @@
-.how-steps {
+#how-it-works {
+  background-color: #f8f9fa;
+  padding: 3rem 1rem;
+  height: fit-content;
+}
+
+.how-steps-timeline {
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
   align-items: center;
-  gap: 2rem;
 }
 
-.how-step {
-  max-width: 700px;
-  width: 100%;
-  text-align: center;
+.timeline-row {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
   opacity: 0.4;
-  transition: all 0.4s ease-in-out;
+  transition: opacity 0.3s ease;
 }
 
-.how-step.active {
+.timeline-row.active {
   opacity: 1;
 }
 
-.step-circle {
+.timeline-row.active .timeline-line {
+  background-color:#5EC1FF;
+}
+
+/* Left side: Icon */
+.timeline-left {
+  width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-icon-box {
+  width: 300px;
+  height: 300px;
+  font-size: 5rem; /* Make icon size large inside box */
+  color: #D2D2D2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.timeline-row.active .timeline-icon-box {
+  color: #5EC1FF;
+}
+
+/* Middle: Vertical line + circle */
+.timeline-line-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px; /* match icon height for centering */
+  position: relative;
+}
+
+.timeline-line {
+  flex: 1;
+  width: 10px;
+  background-color: #D2D2D2;
+  border-radius: 5px;
+}
+
+.timeline-circle {
   width: 50px;
   height: 50px;
-  margin: 0 auto 0.5rem auto;
   border-radius: 50%;
-  background-color: #eaeaea;
-  color: #D2D2D2;
-  font-size: 1.2rem;
-  font-weight: bold;
-  line-height: 50px;
-  transition: color 0.3s, background-color 0.3s;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  font-size: 1.7rem;
+  flex-shrink: 0;
+  margin: 10px 0;
+  transition: background 0.3s;
+  display: grid;
+  justify-content: center;
+  align-items: center;  
 }
 
-.how-step.active .step-circle {
-  color: #828282;
-  background-color: #f5f5f5;
+.timeline-row.active .timeline-circle {
+  background: #5EC1FF;
 }
 
-.step-icon {
-  font-size: 2rem;
-  color: #D2D2D2;
-  margin-bottom: 0.5rem;
-  transition: color 0.3s;
+/* Right side: text */
+.timeline-right {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 300px; /* match icon height for centering */
 }
 
-.how-step.active .step-icon {
-  color: #828282;
+.timeline-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.step-title {
+.timeline-title {
   font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 0.25rem;
+  margin: 0;
   color: #D2D2D2;
   transition: color 0.3s;
 }
 
-.how-step.active .step-title {
-  color: #212529;
-}
-
-.step-desc {
+.timeline-desc {
   font-size: 1rem;
   color: #D2D2D2;
   transition: color 0.3s;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
 }
 
-.how-step.active .step-desc {
+.timeline-row.active .timeline-title,
+.timeline-row.active .timeline-desc {
   color: #212529;
 }
 
-/* Optional padding and spacing */
-#how-it-works {
-  background-color: #f8f9fa;
+
+
+.timeline-row.reverse .timeline-left {
+  justify-content: flex-start;
+}
+
+.timeline-row .timeline-left {
+  justify-content: flex-end;
+}
+
+.timeline-row.reverse .timeline-icon-box{
+  justify-content: flex-start;
 }

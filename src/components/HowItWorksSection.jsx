@@ -61,20 +61,57 @@ export default function HowItWorksSection() {
 
   return (
     <section id="how-it-works" className="py-5">
-      <div className="container text-center">
+      <div className="container text-center pb-5">
         <h2 className="mb-4 display-5 fw-bold">How It Works</h2>
         <p className="mb-5">Step-by-step overview of how we handle your project, from measurement to installation.</p>
-        <div className="how-steps">
+        <div className="how-steps-timeline pt-5">
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`how-step ${index === activeStep ? 'active' : ''}`}
+              className={`timeline-row ${index === activeStep ? 'active' : ''} ${index % 2 === 1 ? 'reverse' : ''}`}
               ref={(el) => (stepRefs.current[index] = el)}
             >
-              <div className="step-circle">{index + 1}</div>
-              <i className={`bi ${step.icon} step-icon`}></i>
-              <h4 className="step-title">{step.title}</h4>
-              <p className="step-desc">{step.description}</p>
+              {index % 2 === 0 ? (
+                <>
+                  <div className="timeline-left">
+                    <div className="timeline-icon-box">
+                      <i className={`bi ${step.icon}`}></i>
+                    </div>
+                  </div>
+                  <div className="timeline-line-container">
+                    {index !== steps.length - 1 && <div className="timeline-line" />}
+                  </div>
+                  <div className="timeline-right">
+                    <div className="timeline-header">
+                      <div className="timeline-circle mb-4">{index + 1}</div>
+                      <div className="text-start">
+                        <h4 className="timeline-title mb-3">{step.title}</h4>
+                        <p className="timeline-desc">{step.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="timeline-right">
+                    <div className="timeline-header">
+                      <div className="timeline-circle mb-4">{index + 1}</div>
+                      <div className="text-start">
+                        <h4 className="timeline-title mb-3">{step.title}</h4>
+                        <p className="timeline-desc">{step.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="timeline-line-container">
+                    {index !== steps.length - 1 && <div className="timeline-line" />}
+                  </div>
+                  <div className="timeline-left">
+                    <div className="timeline-icon-box">
+                      <i className={`bi ${step.icon}`}></i>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           ))}
         </div>
