@@ -1,146 +1,75 @@
+:root {
+  --nav-text-color: #c4c4c4;
+  --nav-text-color-hover: #ffffff;
+  --nav-bg-dark: #1a1a1a;
+  --nav-bg-dark-mobile: #2c2c2c;
+  --nav-btn-text: #c4c4c4;
+  --nav-btn-hover-bg: rgba(255, 255, 255, 0.1);
+  --nav-white: #ffffff;
+  --nav-font-base: clamp(0.45rem, 1vw + 0.2rem, 1rem);
+  --nav-padding-y: clamp(0.5rem, 1vw, 1rem);
+  --nav-link-margin: clamp(1rem, 3vw, 2rem);
+}
+
 .main-navbar {
-  background-color: white;
+  background-color: var(--nav-white);
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
   box-shadow: none;
   z-index: 1000;
+  font-size: var(--nav-font-base);
 }
 
 .navbar-blur {
   background-color: rgba(255, 255, 255, 0.65) !important;
-  -webkit-backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px); 
   backdrop-filter: blur(2px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Optional: smooth nav links hover */
-.main-navbar .nav-link {
-  transition: color 0.2s ease;
+.dropdown-menu.show {
+  font-size: var(--nav-font-base);
+  border-radius: 0;
 }
 
-.main-navbar .nav-link:hover {
-  color: #000 !important;
+.nav-button.navbar-nav a,
+.nav-button.navbar-nav a button {
+  font-size: var(--nav-font-base);
 }
 
-
-.custom-navbar {
-  background-color: #1a1a1a !important; /* Dark background, adjust color as needed */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  padding: 0.8rem 0; /* Adjust vertical padding */
-}
-
-/* Navigation links */
-.custom-nav-links .nav-link {
-  color: #c4c4c4 !important; /* Light gray for links */
-  font-size: 0.95rem; /* Slightly smaller font for links */
-  margin-right: 25px; /* Adjust spacing between links */
-  transition: color 0.2s ease-in-out; /* Smooth transition for hover */
-}
-
-.custom-nav-links .nav-link:hover {
-  color: #ffffff !important; /* White on hover */
-}
-
-/* Toggler icon color for mobile */
-.custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-
-.custom-toggler.navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.1) !important; /* Light border for toggler */
-}
-
-
-/* Action Buttons */
-.custom-action-buttons .btn {
-  font-size: 0.85rem; /* Smaller font for buttons */
-  padding: 6px 18px; /* Adjust padding */
-  border-radius: 4px; /* Slightly rounded corners */
-  margin-left: 15px; /* Space between buttons and nav links */
-  transition: all 0.2s ease-in-out;
-}
-
-.custom-join-button {
-  border: 1px solid #c4c4c4 !important; /* Light border */
-  color: #c4c4c4 !important; /* Text color */
-  background-color: transparent !important; /* Transparent background */
-}
-
-.custom-join-button:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important; /* Subtle hover background */
-  color: #ffffff !important;
-}
-
-.custom-contact-button {
-  background-color: #ffffff !important; /* White background */
-  color: #1a1a1a !important; /* Dark text color */
-  border: 1px solid #ffffff !important; /* White border */
-}
-
-.custom-contact-button:hover {
-  background-color: #f0f0f0 !important; /* Slightly darker white on hover */
-  color: #1a1a1a !important;
-}
-
-            /* Media Queries */
-
-@media (max-width: 991.98px) { /* Bootstrap's lg breakpoint */
-  .custom-navbar .navbar-collapse {
-    background-color: #2c2c2c; /* Slightly lighter dark for mobile menu background */
-    margin-top: 10px;
-    border-radius: 5px;
-    padding: 10px;
+@media (max-width: 991.98px) {
+  .dropdown-menu.show {
+    width: 11rem;
+    border-radius: 0;
   }
 
-  .custom-nav-links {
-    flex-direction: column; /* Stack nav links vertically */
-    align-items: flex-start; /* Align to the left */
-    margin-right: 0 !important; /* Remove me-auto margin */
+  .custom-navbar-toggle .navbar-toggler-icon {
+    width: clamp(1.25rem, 2.5vw, 2rem);
+    height: clamp(1.25rem, 2.5vw, 2rem);
   }
 
-  .custom-nav-links .nav-link {
-    margin-right: 0;
-    padding: 8px 15px;
-    width: 100%; /* Full width links */
+  .custom-estimate-button {
+    width: 11rem;
+    margin-top: 0.7rem;
   }
 
-  .custom-action-buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    width: 100%;
-    margin-top: 15px;
+  .text-center.nav-item.show.dropdown {
+    display: grid;
+    justify-content: center;
   }
 
-  .custom-action-buttons .btn {
-    margin-left: 0;
-    margin-bottom: 10px; /* Space between stacked buttons */
-    width: 100%;
+  .navbar-nav {
+    align-items: center;
   }
 
   .nav-button {
-    margin: 0 3rem 0 3rem;
+    margin: 0 3rem;
   }
+
   .nav-button button {
     margin: 0.3rem 0;
   }
 
   .nav-button button.btn:first-child {
-    margin-top: 1rem;
-  }
-}
-
-
-@media (max-width: 1055px) {
-  .navbar-nav .nav-link,
-  .navbar-nav .navbar-dropdown {
-    font-size: 1.05rem;
-  }
-  .dropdown-menu {
-    margin: 0 3rem 0 3rem;
-  }
-}
-
-@media (min-width: 1056px) {
-  .navbar-nav .nav-link,
-  .navbar-nav .navbar-dropdown {
-    font-size: 1.25rem;
+    width: 11rem;
   }
 }

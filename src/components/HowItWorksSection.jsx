@@ -63,7 +63,7 @@ export default function HowItWorksSection() {
     <section id="how-it-works" className="py-5">
       <div className="container text-center pb-5">
         <h2 className="mb-4 display-5 fw-bold">How It Works</h2>
-        <p className="mb-5">Step-by-step overview of how we handle your project, from measurement to installation.</p>
+        <p className="mb-5 fs-5">Step-by-step overview of how we handle your project, from measurement to installation.</p>
         <div className="how-steps-timeline pt-5">
           {steps.map((step, index) => (
             <div
@@ -83,9 +83,9 @@ export default function HowItWorksSection() {
                   </div>
                   <div className="timeline-right">
                     <div className="timeline-header">
-                      <div className="timeline-circle mb-4">{index + 1}</div>
+                      <div className="timeline-circle mb-md-4">{index + 1}</div>
                       <div className="text-start">
-                        <h4 className="timeline-title mb-3">{step.title}</h4>
+                        <h4 className="timeline-title mb-md-3 fs-3">{step.title}</h4>
                         <p className="timeline-desc">{step.description}</p>
                       </div>
                     </div>
@@ -95,9 +95,9 @@ export default function HowItWorksSection() {
                 <>
                   <div className="timeline-right">
                     <div className="timeline-header">
-                      <div className="timeline-circle mb-4">{index + 1}</div>
+                      <div className="timeline-circle mb-md-4">{index + 1}</div>
                       <div className="text-start">
-                        <h4 className="timeline-title mb-3">{step.title}</h4>
+                        <h4 className="timeline-title mb-md-3 fs-3">{step.title}</h4>
                         <p className="timeline-desc">{step.description}</p>
                       </div>
                     </div>

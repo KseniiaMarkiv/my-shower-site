@@ -20,10 +20,10 @@ const CustomNavbar = () => {
     <Navbar
       expand="lg"
       fixed="top"
-      className={`main-navbar ${scrolled ? 'navbar-blur' : ''}`}
+      className={`p-0 main-navbar ${scrolled ? 'navbar-blur' : ''}`}
     >
       {/* Logo */}
-      <Navbar.Brand href="#home" className="logo-font text-lg text-dark ps-5">
+      <Navbar.Brand href="#home" className="logo-font text-lg text-dark ps-4">
         <img
           src={logo}
           alt="Company Logo"
@@ -33,10 +33,10 @@ const CustomNavbar = () => {
         />
       </Navbar.Brand>
 
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className="me-5" />
+      <Navbar.Toggle aria-controls="basic-navbar-nav" className="me-4 custom-navbar-toggle" />
 
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">
-        <Nav className="ms-lg-5 text-secondary gap-4">
+        <Nav className="ms-lg-5 text-secondary gap-lg-4">
           <Nav.Link href="#home" className="text-center">Home</Nav.Link>
           <Nav.Link href="#testimonials" className="text-center">Testimonials</Nav.Link>
           <Nav.Link href="#about-us" className="text-center">Contact Us</Nav.Link>
@@ -51,7 +51,7 @@ const CustomNavbar = () => {
         </Nav>
 
         {/* Buttons */}
-        <Nav className="ms-lg-auto pe-lg-5 nav-button">
+        <Nav className="ms-lg-auto my-sm-3 my-lg-0 pe-lg-4 nav-button">
           <Button
             href="#quote"
             variant="outline-dark"
