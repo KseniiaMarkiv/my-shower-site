@@ -5,7 +5,7 @@ import '../styles/ServicesSection.css';
 
 function ServicesSection({ id, subheading, title, subtitle, services, showButtons = true }) {
   return (
-    <section id={id} className="services-section py-5 my-5">
+    <section id={id} className="services-section pt-5 my-5">
       <Container>
         <Row className="text-center mb-5">
           <Col className="d-flex flex-column align-items-center">

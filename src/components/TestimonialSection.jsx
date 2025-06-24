@@ -48,6 +48,13 @@ const TestimonialSection = ({ id }) => {
   return (
     <section id={id} className="testimonial-section py-5">
       <Container>
+        <Row className="justify-content-center mb-4">
+          <Col className="text-center">
+            <div className="testimonials-title">
+              <h2>Testimonials</h2>
+            </div>
+          </Col>
+        </Row>
         <Row className="justify-content-center">
           <Col className="text-center">
             <div className="google-logo-container mb-3">
@@ -64,7 +71,7 @@ const TestimonialSection = ({ id }) => {
             >
               {testimonials.map((testimonial) => (
                 <Carousel.Item key={testimonial.id}>
-                  <div className="testimonial-content d-inline-block mx-auto text-center">
+                  <div className="testimonial-content mx-auto text-center">
                     <p className="testimonial-quote mb-0">{testimonial.quote}</p>
 
                     <div className="testimonial-avatar-placeholder d-flex align-items-center justify-content-center mx-auto">
@@ -76,8 +83,8 @@ const TestimonialSection = ({ id }) => {
                     <div className="spacer" />
 
                     <div className="testimonial-meta">
-                      <p className="testimonial-author fw-bold my-0 fs-6">{testimonial.author}</p>
-                      <p className="testimonial-title text-muted fs-6">{testimonial.title}</p>
+                      <p className="testimonial-author fw-bold my-0">{testimonial.author}</p>
+                      <p className="testimonial-title text-muted">{testimonial.title}</p>
                     </div>
                   </div>
                 </Carousel.Item>
@@ -86,10 +93,10 @@ const TestimonialSection = ({ id }) => {
           </Col>
         </Row>
         <Row className="justify-content-center mt-4">
-          <Col md={8} className="text-center">
-            <p className="fs-6 feedback-request">
+          <Col lg={8} className="text-center">
+            <p className="feedback-request">
              <span className="fs-4"> 📝 </span> 
-             We would be <span className="fs-5"> very grateful </span> 
+             We would be <span className="feedback-grateful"> very grateful </span> 
              if you could leave your feedback after our work is completed, and we will post it here.
             </p>
           </Col>
