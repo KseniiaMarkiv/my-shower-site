@@ -8,7 +8,7 @@
 }
 
 .services-section .lead {
-  font-size: 1.15rem;
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
   line-height: 1.6;
 }
 
@@ -29,8 +29,9 @@
 
 .service-icon-container {
   background-color: transparent;
-  min-height: 180px;
+  min-height: 120px;
   width: 100%;
+  font-size: xxx-large;
 }
 
 .services-section .card-title {
@@ -40,6 +41,7 @@
 
 .services-section .card-text {
   color: #6c757d;
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
 }
 
 .services-section .btn-outline-dark {
@@ -47,8 +49,8 @@
   color: #212529;
   font-weight: 500;
   border-width: 2px;
-  font-size: clamp(0.875rem, 1.5vw, 1rem);
-  padding: 0.75rem 1.5rem;
+  font-size: clamp(0.7rem, 1.3vw, 0.8rem);
+  padding: 0.4rem 1.5rem;
   border-radius: 0;
   transition: all 0.2s ease-in-out;
 }

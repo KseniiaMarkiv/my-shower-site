@@ -6,7 +6,7 @@
   --nav-btn-text: #c4c4c4;
   --nav-btn-hover-bg: rgba(255, 255, 255, 0.1);
   --nav-white: #ffffff;
-  --nav-font-base: clamp(0.45rem, 1vw + 0.2rem, 1rem);
+  --nav-font-base: clamp(0.75rem, 1vw + 0.2rem, 1rem);
   --nav-padding-y: clamp(0.5rem, 1vw, 1rem);
   --nav-link-margin: clamp(1rem, 3vw, 2rem);
 }

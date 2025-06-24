@@ -1,7 +1,5 @@
 import React from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCube } from '@fortawesome/free-solid-svg-icons';
 
 import '../styles/ServicesSection.css';
 
@@ -12,11 +10,11 @@ function ServicesSection({ id, subheading, title, subtitle, services, showButton
         <Row className="text-center mb-5">
           <Col className="d-flex flex-column align-items-center">
             {subheading && <p className="text-uppercase fw-bold text-muted mb-2 small">{subheading}</p>}
-            <h2 className="display-4 fw-bold w-700">{title}</h2>
+            <h2 className="display-4 fw-bold w-700 fs-1">{title}</h2>
             <p className="lead text-muted px-lg-5 w-900">{subtitle}</p>
           </Col>
         </Row>
-        <Row className="justify-content-center g-4 my-5">
+        <Row className="justify-content-center my-4 g-4">
           {services.map((service, index) => (
             <Col md={6} lg={4} key={index} className="d-flex">
               <Card className="card-height shadow-sm border-0 flex-fill">
@@ -29,20 +27,20 @@ function ServicesSection({ id, subheading, title, subtitle, services, showButton
                     />
                   ) : (
                     <div className="icon-inner-box d-flex align-items-center justify-content-center">
-                      <FontAwesomeIcon icon={faCube} className="fs-1 text-secondary-emphasis" />
+                      <i className="bi bi-box"></i>
                     </div>
                   )}
                 </div>
-                <Card.Body className="text-center pb-4">
-                  <Card.Title className="fw-bold fs-4 mb-3">{service.name}</Card.Title>
-                  <Card.Text className="text-muted small">{service.description}</Card.Text>
+                <Card.Body className="text-center pb-4 px-4">
+                  <Card.Title className="fw-bold fs-5 mb-3">{service.name}</Card.Title>
+                  <Card.Text>{service.description}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
           ))}
         </Row>
         {showButtons && (
-          <Row className="text-center py-5 my-5">
+          <Row className="text-center py-5 my-4">
             <Col>
               <Button variant="outline-dark" href="#how-it-works" className="me-3">Learn More</Button>
               <a
