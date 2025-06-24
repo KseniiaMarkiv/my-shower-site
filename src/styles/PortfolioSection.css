@@ -1,7 +1,63 @@
 #portfolio {
-  height: 80vh;
+  height: fit-content;
 }
 
-#portfolio img {
-  max-height: 550px;
+.portfolio-text {
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+}
+
+.portfolio-card {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.portfolio-title-blur {
+  position: absolute;
+  height: 20%;
+  display: grid;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  color: #212529;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  text-align: center;
+  z-index: 2;
+}
+
+.portfolio-title-blur span {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    color: white;
+    /* text-shadow: 1px 1px #343434; */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.nav-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #212529;
+  transition: color 0.2s ease;
+}
+
+.nav-icon:hover {
+  color: #000;
 }
