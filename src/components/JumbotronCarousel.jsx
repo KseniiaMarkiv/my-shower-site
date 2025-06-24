@@ -31,8 +31,8 @@ function JumbotronCarousel() {
               <Container>
                 <Row className="justify-content-start">
                   <Col lg={8} md={10}>
-                    <h3 className="fs-1 jumbotron-title mb-4">{slide.title}</h3>
-                    <p className="jumbotron-text mb-4 fs-6">
+                    <h1 className="fs-1 jumbotron-title mb-4">{slide.title}</h1>
+                    <p className="jumbotron-text mb-4">
                       {slide.text}
                     </p>
                     <div className="jumbotron-buttons">

@@ -39,11 +39,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .scroll-to-top {
   position: fixed;
-  bottom: 50px;
-  right: 20px;
+  bottom: clamp(30px, 4vw, 50px);
+  right: clamp(10px, 3vw, 20px);
   z-index: 9999;
-  width: 80px;
-  height: 80px;
+  width: clamp(40px, 8vw, 80px);
+  height: clamp(40px, 8vw, 80px);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -51,9 +51,9 @@ h1, h2, h3, h4, h5, h6 {
   transition: opacity 0.3s ease-in-out;
 }
 
-@media (max-width: 575.98px) {
-  .scroll-to-top {
-    bottom: 30px;
-    right: 10px;
-  }
+.scroll-to-top img {
+  width: clamp(40px, 6vw, 60px);
+  height: clamp(35px, 5.5vw, 50px);
+  object-fit: contain;
 }
+

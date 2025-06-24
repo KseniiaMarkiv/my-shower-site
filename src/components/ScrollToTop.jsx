@@ -36,7 +36,6 @@ export default function ScrollToTop() {
          <img
           src={backBtnImg}
           alt="Back to Top"
-          style={{ width: '80px', height: '70px' }}
         />
 
       </button>

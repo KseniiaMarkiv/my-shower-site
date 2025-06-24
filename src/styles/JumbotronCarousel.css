@@ -18,17 +18,10 @@
 }
 
 .jumbotron-text {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(0.6rem, 1.7vw, 0.8rem);
   color: white;
   text-shadow: 0 1px 3px rgba(0,0,0,0.4);
   max-width: 600px;
-}
-
-.jumbotron-buttons .btn-learn-more,
-.jumbotron-buttons .btn-contact-us {
-  font-size: clamp(0.875rem, 1.5vw, 1rem);
-  padding: 0.5rem 1.25rem;
-  border-radius: 0.5rem;
 }
 
 .jumbotron-img,
@@ -43,7 +36,6 @@
 .jumbotron-img:hover,
 .jumbotron-video:hover {
   filter: brightness(100%);
-  transition: all 0.3s ease-in-out;
 }
 
 .carousel-item {
@@ -56,20 +48,14 @@
 
 .jumbotron-buttons .btn {
   border-radius: 0;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
   font-weight: 600;
+  font-size: clamp(0.7rem, 1.3vw, 0.8rem);
+  padding: 0.4rem 1.5rem;
 }
-.btn-learn-more:hover {
-  background-color: #ffffff7e;
-  color: #343434;
-  transition: all 0.3s ease-in-out;
-}
-
+.btn-learn-more:hover,
 .btn-contact-us:hover {
   background-color: #ffffff7e;
   color: #343434;
-  transition: all 0.3s ease-in-out;
 }
 
         /* Media Queries */
