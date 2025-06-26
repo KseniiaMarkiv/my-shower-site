@@ -6,7 +6,7 @@
   "homepage": "https://KseniiaMarkiv.github.io/my-shower-site",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node copy404.js",
+    "build": "vite build && copy dist\\index.html dist\\404.html",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
