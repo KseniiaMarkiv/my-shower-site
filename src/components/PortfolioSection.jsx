@@ -5,11 +5,11 @@ import '../styles/PortfolioSection.css';
 const portfolioItems = [
   {
     title: "Showers",
-    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750899830/20240814_161015_ttxocg.jpg",
+    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750899830/Showers/frameless/20240814_161015_ttxocg.jpg",
   },
   {
     title: "Mirrors",
-    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/v1750900165/20240920_113729_fhd99h.jpg",
+    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900165/Mirrors/20240920_113729_fhd99h.jpg",
   },
   {
     title: "Railings",

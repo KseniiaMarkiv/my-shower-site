@@ -7,7 +7,7 @@ function GalleryPage() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/gallery/${slug}`)
+    fetch(`https://email-api-p7zg.onrender.com/api/gallery/${slug}`)
       .then(res => res.json())
       .then(setImages)
       .catch(console.error);
@@ -22,9 +22,11 @@ function GalleryPage() {
             className="col-12 col-sm-6 col-md-4 col-lg-3"
           >
             <img
-              src={img.url}
+              src={`https://res.cloudinary.com/dyxzzhzqs/image/upload/w_360,h_640,c_fill/${img.public_id}.jpg`}
+              loading="lazy"
+              fetchPriority="low"
               alt={img.public_id}
-              className="img-fluid rounded shadow-sm gallery-image"
+              className="img-fluid hadow-sm gallery-image"
             />
           </div>
         ))}
