@@ -13,11 +13,11 @@ const portfolioItems = [
   },
   {
     title: "Railings",
-    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900088/20250624_184846_v1onh3.jpg",
+    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900088/Railings/20250624_184846_v1onh3.jpg",
   },
   {
     title: "Shelves",
-    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900040/20241231_171418_nceqqo.jpg",
+    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900040/Shelves/20241231_171418_nceqqo.jpg",
   },
 ];
 

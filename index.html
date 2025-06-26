@@ -3,38 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Preconnects for font optimization -->
-    <link rel="preconnect" href="https://res.cloudinary.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?lang=ru&family=Product+Sans|Roboto:400,700" rel="stylesheet">
 
-    <!-- SEO Meta -->
-    <title>Perfect Finish Interiors | Custom Shower, Mirror & Railing Installations</title>
-    <meta name="description" content="Transform your space with custom glass showers, mirrors, and railings. Trusted installations for residential and commercial interiors." />
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?lang=ru&family=Product+Sans|Roboto:400,700" rel="stylesheet" />
+
+    <!-- Preload LCP Hero Image -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://res.cloudinary.com/dyxzzhzqs/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/v1750900088/Railings/20250624_185100_s3i4rv.jpg"
+    />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- SEO Meta Tags -->
+    <title>Perfect Finish Interiors: NJ's Custom sizes of Glass, Mirrors & Railing Artisans</title>
+    <meta name="description" content="Transform your space with custom sizes of tempered glass showers, mirrors, and railings. Trusted installations for residential and commercial interiors." />
     <meta name="keywords" content="tempered glass, glass shower installation, custom mirrors, railing installation, bathroom remodeling, home renovation, Perfect Finish Interiors" />
-    <meta name="author" content="Perfect Finish Interiors" />
+    <meta name="author" content="MyGlassStyle" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.myglassstyle.com/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.myglassstyle.com/" />
-    <meta property="og:title" content="Perfect Finish Interiors | Custom Shower, Mirror & Railing Installations" />
-    <meta property="og:description" content="Transform your space with custom glass showers, mirrors, and railings. Trusted installations for residential and commercial interiors." />
-    <meta property="og:image" content="https://www.myglassstyle.com/jumbotron-slide-2.webp" />
+    <meta property="og:title" content="Perfect Finish Interiors: NJ's Custom sizes of Glass, Mirrors & Railing Artisans" />
+    <meta property="og:description" content="Transform your space with custom sizes of glass showers, mirrors, and railings. Trusted installations for residential and commercial interiors." />
+    <meta property="og:image" content="https://res.cloudinary.com/dyxzzhzqs/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/v1750900088/Railings/20250624_185100_s3i4rv.jpg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Perfect Finish Interiors | Custom Shower, Mirror & Railing Installations" />
-    <meta name="twitter:description" content="Transform your space with custom glass showers, mirrors, and railings. Trusted installations for homes and businesses." />
-    <meta name="twitter:image" content="https://www.myglassstyle.com/jumbotron-slide-2.webp" />
+    <meta name="twitter:title" content="Perfect Finish Interiors: NJ's Custom sizes of Glass, Mirrors & Railing Artisans" />
+    <meta name="twitter:description" content="Transform your space with custom sizes of glass showers, mirrors, and railings. Trusted installations for homes and businesses." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dyxzzhzqs/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/v1750900088/Railings/20250624_185100_s3i4rv.jpg" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "MyGlassStyle",
+      "image": "https://res.cloudinary.com/dyxzzhzqs/image/upload/v1750900088/Railings/20250624_185100_s3i4rv.jpg",
+      "url": "https://www.myglassstyle.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Jersey",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      "description": "Transform your space with custom sizes of glass showers, mirrors, and railings. Trusted installations for residential and commercial interiors."
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
