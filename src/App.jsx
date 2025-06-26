@@ -8,13 +8,10 @@ import AboutUsAndFooter from './components/AboutUsAndFooter.jsx'
 
 import Home from './Home'
 import GalleryPage from './components/GalleryPage'
-import RedirectFrom404 from "./RedirectFrom404"
-
 
 export default function App() {
   return (
-  <BrowserRouter>
-    <RedirectFrom404 />
+  <BrowserRouter basename="/my-shower-site">
     <CustomNavbar />
     <ScrollToTop />
     <Routes>
