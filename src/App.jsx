@@ -11,7 +11,7 @@ import GalleryPage from './components/GalleryPage'
 
 export default function App() {
   return (
-  <BrowserRouter basename="/my-shower-site">
+  <BrowserRouter>
     <CustomNavbar />
     <ScrollToTop />
     <Routes>
