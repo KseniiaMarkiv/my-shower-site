@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
+import { HashLink } from 'react-router-hash-link';
 
 import logo from '../assets/thanks_support_small_business.png';
 import '../styles/Navbar.css';
@@ -37,16 +38,16 @@ const CustomNavbar = () => {
 
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">
         <Nav className="ms-lg-5 text-secondary gap-lg-4">
-          <Nav.Link href="#home" className="text-center">Home</Nav.Link>
-          <Nav.Link href="#testimonials" className="text-center">Testimonials</Nav.Link>
-          <Nav.Link href="#about-us" className="text-center">Contact Us</Nav.Link>
+          <Nav.Link as={HashLink} to="/#home" className="text-center">Home</Nav.Link>
+          <Nav.Link as={HashLink} to="/#testimonials" className="text-center">Testimonials</Nav.Link>
+          <Nav.Link as={HashLink} to="/#about-us" className="text-center">Contact Us</Nav.Link>
 
           <NavDropdown title="More Options" id="more-options-dropdown" className="text-center">
-            <NavDropdown.Item href="#services-short" className="text-center">Installation Types</NavDropdown.Item>
-            <NavDropdown.Item href="#services-professional" className="text-center">Our Services</NavDropdown.Item>
+            <NavDropdown.Item as={HashLink} to="/#services-short" className="text-center">Installation Types</NavDropdown.Item>
+            <NavDropdown.Item as={HashLink} to="/#services-professional" className="text-center">Our Services</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#portfolio" className="text-center">Gallery</NavDropdown.Item>
-            <NavDropdown.Item href="#how-it-works" className="text-center">How It Works</NavDropdown.Item>
+            <NavDropdown.Item as={HashLink} to="/#portfolio" className="text-center">Gallery</NavDropdown.Item>
+            <NavDropdown.Item as={HashLink} to="/#how-it-works" className="text-center">How It Works</NavDropdown.Item>
           </NavDropdown>
         </Nav>
 
