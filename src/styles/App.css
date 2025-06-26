@@ -1,3 +1,7 @@
+body {
+  scroll-padding-top: 80px; /* For anchor scrolling like #services */
+}
+
 /* For Headings: Bold, modern sans-serif */
 .font-heading {
   font-family: 'Inter', sans-serif; /* Or 'Montserrat', sans-serif; */

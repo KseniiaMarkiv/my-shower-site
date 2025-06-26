@@ -61,9 +61,3 @@
 .nav-icon:hover {
   color: #000;
 }
-
-/* GalleryPage */
-
-.gallery-image {
-  object-fit: cover;
-}

@@ -1,25 +1,32 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 import '../styles/PortfolioSection.css';
 
 const portfolioItems = [
   {
     title: "Showers",
+    slug: "showers",
     img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750899830/Showers/frameless/20240814_161015_ttxocg.jpg",
   },
   {
     title: "Mirrors",
+    slug: "mirrors",
     img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900165/Mirrors/20240920_113729_fhd99h.jpg",
   },
   {
     title: "Railings",
+    slug: "railings",
     img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900088/Railings/20250624_184846_v1onh3.jpg",
   },
   {
     title: "Shelves",
+    slug: "shelves",
     img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900040/Shelves/20241231_171418_nceqqo.jpg",
   },
 ];
+
 
 export default function PortfolioSection() {
   const [startIndex, setStartIndex] = useState(0);
@@ -50,12 +57,12 @@ export default function PortfolioSection() {
           <i className="bi bi-caret-left-fill nav-icon" onClick={handlePrev}></i>
 
           {visibleItems.map((item, index) => (
-            <div key={index} className="portfolio-card">
+            <Link to={`/gallery/${item.slug}`} key={index} className="portfolio-card text-decoration-none">
               <img src={item.img} alt={item.title} className="portfolio-img" />
               <div className="portfolio-title-blur">
                 <span>{item.title}</span>
               </div>
-            </div>
+            </Link>
           ))}
 
           <i className="bi bi-caret-right-fill nav-icon" onClick={handleNext}></i>

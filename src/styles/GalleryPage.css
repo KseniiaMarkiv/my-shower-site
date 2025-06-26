@@ -1,0 +1,7 @@
+.gallery-page {
+  padding-top: 80px;
+}
+.gallery-image {
+  object-fit: cover;
+}
+

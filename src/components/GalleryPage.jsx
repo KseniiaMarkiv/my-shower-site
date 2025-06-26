@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
+import '../styles/GalleryPage.css';
+
 function GalleryPage() {
 // function GalleryPage({ slug }) {    //NOTE - This won't work — React Router v6 doesn't pass slug directly as a prop.
   const { slug } = useParams(); // <-- GET the slug from the URL
@@ -14,7 +16,7 @@ function GalleryPage() {
   }, [slug]);
 
   return (
-    <div className="container py-4">
+    <div className="container pb-4 gallery-page">
       <div className="row g-3">
         {images.map((img, index) => (
           <div
