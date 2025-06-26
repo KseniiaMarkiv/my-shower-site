@@ -5,19 +5,19 @@ import '../styles/PortfolioSection.css';
 const portfolioItems = [
   {
     title: "Showers",
-    img: "https://picsum.photos/360/640?random=1",
+    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750899830/20240814_161015_ttxocg.jpg",
   },
   {
     title: "Mirrors",
-    img: "https://picsum.photos/360/640?random=1",
+    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/v1750900165/20240920_113729_fhd99h.jpg",
   },
   {
     title: "Railings",
-    img: "https://placehold.co/360x640?text=Railings&font=Montserrat",
+    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900088/20250624_184846_v1onh3.jpg",
   },
   {
     title: "Shelves",
-    img: "https://picsum.photos/360/640?random=1",
+    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900040/20241231_171418_nceqqo.jpg",
   },
 ];
 
