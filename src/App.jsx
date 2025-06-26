@@ -13,6 +13,7 @@ import GalleryPage from './components/GalleryPage'
 export default function App() {
   return (
   <BrowserRouter>
+    <RedirectFrom404 />
     <CustomNavbar />
     <ScrollToTop />
     <Routes>
