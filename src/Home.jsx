@@ -49,7 +49,7 @@ const professionalServices = [
 export default function Home() {
   return (
     <>
-      <JumbotronCarousel />
+      <JumbotronCarousel id="jumbotron" />
       <ServicesSection
         id="services-short"
         className="py-5 my-5"

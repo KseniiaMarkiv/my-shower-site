@@ -11,7 +11,7 @@ function JumbotronCarousel() {
   };
 
   return (
-    <div className="jumbotron-section">
+    <div id="jumbotron" className="jumbotron-section">
       <Carousel activeIndex={index} onSelect={handleSelect} fade={true} controls={false} indicators={false}>
         {jumbotronSlideData.map((slide, idx) => (
           <Carousel.Item key={slide.id} interval={5000}>

@@ -1,7 +1,14 @@
 .gallery-page {
-  padding-top: 80px;
+  padding-top: 60px;
 }
 .gallery-image {
   object-fit: cover;
 }
 
+        /* Media Queries */
+
+@media (max-width: 991.98px) {
+  .gallery-page {
+    padding-top: 50px;
+  }
+}
