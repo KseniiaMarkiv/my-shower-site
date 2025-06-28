@@ -1,55 +1,59 @@
 import React, { useState } from 'react';
 import { Carousel, Container, Row, Col, Button } from 'react-bootstrap';
 import '../styles/JumbotronCarousel.css';
-import jumbotronSlideData from '../jumbotronImages'; // Adjust path if you put jumbotronImages.js in assets/
+import jumbotronSlideData from '../jumbotronImages';
 
 function JumbotronCarousel() {
   const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
+  const handleSelect = (selectedIndex) => setIndex(selectedIndex);
 
   return (
     <div id="jumbotron" className="jumbotron-section">
-      <Carousel activeIndex={index} onSelect={handleSelect} fade={true} controls={false} indicators={false}>
-        {jumbotronSlideData.map((slide, idx) => (
+      <Carousel activeIndex={index} onSelect={handleSelect} fade controls={false} indicators={false}>
+        {jumbotronSlideData.map((slide) => (
           <Carousel.Item key={slide.id} interval={5000}>
-            <picture>
-              <source srcSet={slide.xs} media="(max-width: 575.98px)" />
-              <source srcSet={slide.sm} media="(min-width: 576px) and (max-width: 767.98px)" />
-              <source srcSet={slide.md} media="(min-width: 768px) and (max-width: 991.98px)" />
-              <source srcSet={slide.lg} media="(min-width: 992px) and (max-width: 1199.98px)" />
-              <source srcSet={slide.xl} media="(min-width: 1200px) and (max-width: 1399.98px)" />
-              <img
-                className="d-block w-100 jumbotron-img"
-                src={slide.xxl}
-                alt={slide.alt}
+            {slide.type === 'video' ? (
+              <video
+                className="d-block w-100 jumbotron-video"
+                src={`${slide.cloudinaryBase}#t=0.1`}
+                autoPlay
+                muted
+                loop
+                playsInline
               />
-            </picture>
+            ) : (
+              <img
+                src={`${slide.cloudinaryBase}?q_auto:eco&f_auto`}
+                srcSet={`
+                  ${slide.cloudinaryBase}?w=576&q_auto&f_auto 576w,
+                  ${slide.cloudinaryBase}?w=768&q_auto&f_auto 768w,
+                  ${slide.cloudinaryBase}?w=992&q_auto&f_auto 992w,
+                  ${slide.cloudinaryBase}?w=1200&q_auto&f_auto 1200w,
+                  ${slide.cloudinaryBase}?w=1600&q_auto&f_auto 1600w
+                `}
+                sizes="(max-width: 575px) 576px,
+                       (max-width: 767px) 768px,
+                       (max-width: 991px) 992px,
+                       (max-width: 1199px) 1200px,
+                       1600px"
+                className="d-block w-100 jumbotron-img"
+                alt={slide.alt}
+                loading="lazy"
+              />
+            )}
+
             <Carousel.Caption className="jumbotron-caption">
               <Container>
                 <Row className="justify-content-start">
                   <Col lg={8} md={10}>
                     <h1 className="fs-1 jumbotron-title mb-4">{slide.title}</h1>
-                    <p className="jumbotron-text mb-4">
-                      {slide.text}
-                    </p>
+                    <p className="jumbotron-text mb-4">{slide.text}</p>
                     <div className="jumbotron-buttons">
                       <Button variant="light" href="#how-it-works" className="btn-learn-more me-3">
                         Learn More
                       </Button>
-                      {/* Note: Original slide 6 had variant="outline-dark" */}
-                      <a
-                        href="mailto:myglassstyle@gmail.com"
-                        onClick={() => {
-                          console.log('Contact button clicked inside Jumbotron');
-                        }}
-                      >
-                        <Button
-                          variant="outline-light" 
-                          className="btn-contact-us"
-                        >
+                      <a href="mailto:myglassstyle@gmail.com">
+                        <Button variant="outline-light" className="btn-contact-us">
                           Contact
                         </Button>
                       </a>
