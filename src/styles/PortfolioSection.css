@@ -17,6 +17,10 @@
   transition: transform 0.3s ease;
 }
 
+.portfolio-card:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.561);
+}
+
 .portfolio-img {
   width: 100%;
   height: auto;
@@ -62,3 +66,9 @@
   color: #000;
 }
 
+/* Media Query */
+/* @media (max-width: 575.98px) {
+  .portfolio-card:hover {
+    transform: scale(1);
+  }
+} */

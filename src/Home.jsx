@@ -51,20 +51,20 @@ export default function Home() {
     <>
       <JumbotronCarousel id="jumbotron" />
       <ServicesSection
+        id="services-professional"
+        title="Explore Our Professional Installation Services with Tempered Glass"
+        subtitle="Transform your space with our expert installations. From showers to mirrors and railings, we bring your vision to life."
+        services={professionalServices}
+        showButtons={true}
+      />
+      <HowItWorksSection />
+      <TestimonialSection id="testimonials" />
+      <ServicesSection
         id="services-short"
         className="py-5 my-5"
         title="Explore Our Installation Services"
         subtitle="Transform your space with our expert installation services. From showers to mirrors and railings, we bring your vision to life."
         services={mainServices}
-        showButtons={true}
-      />
-      <TestimonialSection id="testimonials" />
-      <HowItWorksSection />
-      <ServicesSection
-        id="services-professional"
-        title="Explore Our Professional Installation Services with Tempered Glass"
-        subtitle="Transform your space with our expert installations. From showers to mirrors and railings, we bring your vision to life."
-        services={professionalServices}
         showButtons={true}
       />
       <PortfolioSection id="portfolio" />
