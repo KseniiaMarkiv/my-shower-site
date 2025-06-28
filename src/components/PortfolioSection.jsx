@@ -86,7 +86,11 @@ export default function PortfolioSection() {
 
         {/* Carousel Wrapper - Using Row for responsive columns */}
         <div className="portfolio-carousel d-flex justify-content-center align-items-center gap-2"> {/* Reduced gap slightly */}
-          <i className="bi bi-caret-left-fill nav-icon" onClick={handlePrev}></i>
+          {/* <i className="bi bi-caret-left-fill nav-icon" onClick={handlePrev}></i> */}
+          <div className="portfolio-nav-arrows d-flex align-items-center">
+            <i className="bi bi-caret-left-fill nav-icon" onClick={handlePrev}></i>
+          </div>
+
 
           <Row className="flex-grow-1 justify-content-center g-3"> {/* Use g-3 for Bootstrap 5 gutters */}
             {visibleItems.map((item, index) => (
@@ -107,7 +111,11 @@ export default function PortfolioSection() {
             ))}
           </Row>
 
-          <i className="bi bi-caret-right-fill nav-icon" onClick={handleNext}></i>
+          {/* <i className="bi bi-caret-right-fill nav-icon" onClick={handleNext}></i> */}
+          <div className="portfolio-nav-arrows d-flex align-items-center">
+            <i className="bi bi-caret-right-fill nav-icon" onClick={handleNext}></i>
+          </div>
+
         </div>
       </Container>
     </section>

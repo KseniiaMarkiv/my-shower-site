@@ -55,6 +55,14 @@ h1, h2, h3, h4, h5, h6 {
   transition: opacity 0.3s ease-in-out;
 }
 
+.scroll-to-top.btn:focus,
+.scroll-to-top.btn:active,
+.scroll-to-top.btn:focus-visible {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .scroll-to-top img {
   width: clamp(40px, 6vw, 60px);
   height: clamp(35px, 5.5vw, 50px);

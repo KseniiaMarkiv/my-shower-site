@@ -1,5 +1,6 @@
+/* src\styles\PortfolioSection.css */
 #portfolio {
-  height: fit-content;
+  min-height: 750px;
 }
 
 .portfolio-text {
@@ -55,11 +56,25 @@
   text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
+.portfolio-nav-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+}
+
+
 .nav-icon {
   font-size: 2rem;
   cursor: pointer;
   color: #212529;
   transition: color 0.2s ease;
+   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  line-height: 1;
+  vertical-align: middle;
 }
 
 .nav-icon:hover {
