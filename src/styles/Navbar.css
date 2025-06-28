@@ -36,6 +36,17 @@
   font-size: var(--nav-font-base);
 }
 
+
+.gallery-link-fade {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.gallery-link-fade.show {
+  opacity: 1;
+}
+
+
 @media (max-width: 991.98px) {
   .main-navbar img {
     height: 50px;
@@ -53,36 +64,36 @@
 
   .navbar-collapse.show {
     height: 100vh;
-    transition: height 1.5s ease-in-out !important;
+    transition: height 0.3s ease-in-out !important;
   }
 
   .collapsing {
-    transition: all 1.8s linear !important;
+    transition: all 1s linear !important;
   }
 
   /* Styles for the menu content (Nav, buttons) to appear/disappear smoothly */
   .navbar-collapse .nav-link {
     opacity: 0;
-    transition: opacity 1.8s ease-in-out 0.6s, visibility 0s 1.8s;
+    transition: opacity 0.5s ease-in-out 0.3s, visibility 0s 0.5s;
   }
 
   .navbar-collapse.show .nav-link {
     opacity: 1;
-    transition: opacity 1s ease-in-out 0.3s, visibility 0s;
+    transition: opacity 0.5s ease-in-out 0.3s, visibility 0s;
   }
 
   .navbar-collapse .nav-button .btn {
     opacity: 0;
-    transition: opacity 1s ease-in-out 0.5s;
+    transition: opacity 0.5s ease-in-out 0.5s;
   }
 
   .navbar-collapse.show .nav-button .btn {
     opacity: 1;
-    transition: opacity 1s ease-in-out 0.5s;
+    transition: opacity 0.5s ease-in-out 0.5s;
   }
 
   .custom-navbar-toggle {
-    width: 30px;
+    width: 60px;
     height: fit-content;
     position: relative;
     border: none !important;
@@ -96,16 +107,21 @@
     height: auto;
     padding: 0;
   }
-    .line {
+  .line {
     height: 2px;
     transform: translateZ(0);
     background-color: var(--nav-bg-dark-mobile);
     width: 100%;
   }
 
+  .line.top-line {
+    width: 30px;
+  }
+
   .line.middle-line {
     width: 20px;
   }
+
   .line.bottom-line {
     width: 26px;
   }

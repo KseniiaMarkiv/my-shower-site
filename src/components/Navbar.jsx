@@ -9,6 +9,8 @@ const CustomNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [animate, setAnimate] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [showGallery, setShowGallery] = useState(false);
+
 
   const navbarRef = useRef(null); // Create a ref for the Navbar component
 
@@ -58,6 +60,16 @@ const CustomNavbar = () => {
     setExpanded(false);
   };
 
+  useEffect(() => {
+  if (!expanded) {
+    const timer = setTimeout(() => setShowGallery(true), 400);
+    return () => clearTimeout(timer);
+  } else {
+    setShowGallery(false);
+  }
+}, [expanded]);
+
+
   return (
     <Navbar
       ref={navbarRef} // Attach the ref to the Navbar component
@@ -77,6 +89,17 @@ const CustomNavbar = () => {
           className="d-inline-block align-top"
         />
       </Navbar.Brand>
+
+      {!expanded && showGallery && (
+        <Nav.Link
+          as={HashLink}
+          to="/#portfolio"
+          className="text-center gallery-menu d-lg-none d-md-block d-sm-block d-block gallery-link-fade show"
+          onClick={handleNavLinkClick}
+        >
+          Gallery
+        </Nav.Link>
+      )}
 
       <Navbar.Toggle
         aria-controls="basic-navbar-nav"

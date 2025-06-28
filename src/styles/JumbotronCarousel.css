@@ -64,12 +64,6 @@
 
         /* Media Queries */
 
-@media (max-width: 991.98px) {
-  .jumbotron-section {
-    padding-top: 50px;
-  }
-}
-
 @media (max-width: 768px) {
   .jumbotron-caption {
     left: 2%;
