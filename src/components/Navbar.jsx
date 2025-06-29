@@ -2,8 +2,14 @@ import { useEffect, useState, useRef } from 'react'; // Import useRef
 import { Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 
-import logo from '../assets/thanks_support_small_business.png';
 import '../styles/Navbar.css';
+
+const galleryItems = [
+  { name: 'Showers', slug: 'showers' },
+  { name: 'Mirrors', slug: 'mirrors' },
+  { name: 'Railings', slug: 'railings' },
+  { name: 'Shelves', slug: 'shelves' },
+];
 
 const CustomNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -72,38 +78,18 @@ const CustomNavbar = () => {
 
   return (
     <Navbar
-      ref={navbarRef} // Attach the ref to the Navbar component
+      ref={navbarRef}
       expand="lg"
       fixed="top"
-      className={`p-0 main-navbar ${scrolled ? 'navbar-blur' : ''}`}
+      className={`main-navbar ${scrolled ? 'navbar-blur' : ''}`}
       expanded={expanded}
-      onToggle={() => setExpanded(!expanded)} // Keep this to ensure internal state sync
+      onToggle={() => setExpanded(!expanded)}
     >
-      {/* Logo */}
-      <Navbar.Brand as={HashLink} to="/#home" className="logo-font text-lg text-dark ps-4">
-        <img
-          src={logo}
-          alt="Company Logo"
-          width="auto"
-          height="60"
-          className="d-inline-block align-top"
-        />
-      </Navbar.Brand>
 
-      {!expanded && showGallery && (
-        <Nav.Link
-          as={HashLink}
-          to="/#portfolio"
-          className="text-center gallery-menu d-lg-none d-md-block d-sm-block d-block gallery-link-fade show"
-          onClick={handleNavLinkClick}
-        >
-          Gallery
-        </Nav.Link>
-      )}
-
+    <div className="d-flex justify-content-between align-items-center d-lg-none w-100 mobile-navbar-container">
       <Navbar.Toggle
         aria-controls="basic-navbar-nav"
-        className={`me-4 custom-navbar-toggle ${animate ? 'animate-lines' : ''}`}
+        className={`custom-navbar-toggle navbar-toggler collapsed ms-3 ${animate ? 'animate-lines' : ''}`}
         onClick={handleToggleClick}
       >
         <div className="line top-line"></div>
@@ -111,23 +97,64 @@ const CustomNavbar = () => {
         <div className="line bottom-line"></div>
       </Navbar.Toggle>
 
+        {!expanded && showGallery && (
+          <NavDropdown
+            title={
+              <button className="btn btn-dark gallery-menu d-flex align-items-center gap-2">
+                <span className="dropdown-caret">&#9662;</span> {/* down arrow on the left */}
+                Gallery
+              </button>
+            }
+            id="mobile-gallery-dropdown"
+            className="d-lg-none d-md-block d-sm-block d-block gallery-link-fade show me-3"
+            align="end"
+          >
+            {galleryItems.map((item) => (
+              <NavDropdown.Item
+                key={item.slug}
+                as={HashLink}
+                to={`/gallery/${item.slug}`}
+                onClick={handleNavLinkClick}
+                className="text-center"
+              >
+                {item.name}
+              </NavDropdown.Item>
+            ))}
+          </NavDropdown>
+        )}
+    </div>
+
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">
         <Nav className="ms-lg-5 text-secondary gap-lg-4">
           <Nav.Link as={HashLink} to="/#jumbotron" className="text-center" onClick={handleNavLinkClick}>Home</Nav.Link>
           <Nav.Link as={HashLink} to="/#testimonials" className="text-center" onClick={handleNavLinkClick}>Testimonials</Nav.Link>
+          
+          <NavDropdown title="Gallery" id="gallery-dropdown" className="text-center">
+            {galleryItems.map((item) => (
+              <NavDropdown.Item
+                key={item.slug}
+                as={HashLink}
+                to={`/gallery/${item.slug}`}
+                onClick={handleNavLinkClick}
+                className="text-center"
+              >
+                {item.name}
+              </NavDropdown.Item>
+            ))}
+          </NavDropdown>
           <Nav.Link as={HashLink} to="/#about-us" className="text-center" onClick={handleNavLinkClick}>Contact Us</Nav.Link>
 
           <NavDropdown title="More Options" id="more-options-dropdown" className="text-center">
             <NavDropdown.Item as={HashLink} to="/#services-short" className="text-center" onClick={handleNavLinkClick}>Installation Types</NavDropdown.Item>
             <NavDropdown.Item as={HashLink} to="/#services-professional" className="text-center" onClick={handleNavLinkClick}>Our Services</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item as={HashLink} to="/#portfolio" className="text-center" onClick={handleNavLinkClick}>Gallery</NavDropdown.Item>
+            <NavDropdown.Item as={HashLink} to="/#portfolio" className="text-center" onClick={handleNavLinkClick}>Our Works</NavDropdown.Item>
             <NavDropdown.Item as={HashLink} to="/#how-it-works" className="text-center" onClick={handleNavLinkClick}>How It Works</NavDropdown.Item>
           </NavDropdown>
         </Nav>
 
         {/* Buttons */}
-        <Nav className="ms-lg-auto my-sm-3 my-lg-0 pe-lg-4 nav-button">
+        <Nav className="ms-lg-auto my-sm-3 my-lg-0 pe-lg-5 nav-button">
           <Button
             href="#quote"
             variant="outline-dark"

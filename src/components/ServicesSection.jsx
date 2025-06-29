@@ -51,7 +51,6 @@ function ServicesSection({ id, subheading, title, subtitle, services, showButton
               >
                 <Button
                   variant="outline-dark"
-                  className="borderless-btn"
                 >
                   Contact <i className="bi bi-chevron-right ms-2"></i>
                 </Button>

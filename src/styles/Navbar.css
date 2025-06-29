@@ -17,6 +17,7 @@
   box-shadow: none;
   z-index: 1000;
   font-size: var(--nav-font-base);
+  padding-top: 16px;
 }
 
 .logo-font {
@@ -52,6 +53,23 @@
     height: 50px;
   }
 
+  .gallery-menu {
+    padding: 1px 20px;
+    border-radius: 0%;
+  }
+
+ .dropdown-toggle::after {
+    display: none !important;
+  }
+
+  .dropdown-caret {
+    font-size: 0.9rem;
+  }
+
+  .mobile-navbar-container {
+    height: 27.6px;
+   }
+
   .dropdown-menu.show {
     width: 11rem;
     border-radius: 0;
@@ -63,7 +81,6 @@
   }
 
   .navbar-collapse.show {
-    height: 100vh;
     transition: height 0.3s ease-in-out !important;
   }
 
@@ -102,7 +119,7 @@
     outline: none !important;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 5px;
     height: auto;
     padding: 0;
@@ -171,6 +188,6 @@
 
 @keyframes shake {
   0% { transform: translateX(0); }
-  50% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
   100% { transform: translateX(0); }
 }

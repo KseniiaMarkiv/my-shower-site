@@ -79,7 +79,7 @@ export default function PortfolioSection() {
   return (
     <section id="portfolio" className="portfolio-section py-5">
       <Container>
-        <h2 className="display-4 fw-bold text-center mb-1 fs-1">Our Work</h2>
+        <h2 className="display-4 fw-bold text-center mb-1 fs-1">Our Works</h2>
         <p className="text-center mb-5 portfolio-text">
           See some of our recent shower, mirror, and railing installations.
         </p>
