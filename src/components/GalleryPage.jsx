@@ -4,14 +4,17 @@ import { useParams } from "react-router-dom"
 import '../styles/GalleryPage.css';
 
 function GalleryPage() {
-// function GalleryPage({ slug }) {    //NOTE - This won't work — React Router v6 doesn't pass slug directly as a prop.
-  const { slug } = useParams(); // <-- GET the slug from the URL
+  const { slug } = useParams();
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch(`https://email-api-p7zg.onrender.com/api/gallery/${slug}`)
+      const url = `https://email-api-p7zg.onrender.com/api/gallery/${slug}?t=${Date.now()}`; // cache-busting param
+      fetch(url)
       .then(res => res.json())
-      .then(setImages)
+      .then(data => {
+        console.log("Fetched gallery data:", data);
+        setImages(data);
+      })
       .catch(console.error);
   }, [slug]);
 
@@ -28,7 +31,7 @@ function GalleryPage() {
               loading="lazy"
               fetchPriority="low"
               alt={img.public_id}
-              className="img-fluid hadow-sm gallery-image"
+              className="img-fluid shadow-sm gallery-image"
             />
           </div>
         ))}
