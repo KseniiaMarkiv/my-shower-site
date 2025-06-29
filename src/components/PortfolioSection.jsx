@@ -8,22 +8,22 @@ const portfolioItems = [
   {
     title: "Showers",
     slug: "showers",
-    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750899830/Showers/frameless/20240814_161015_ttxocg.jpg",
+    imgPublicId: "Showers/triple/01-shower-triple-4_vjh4bf",
   },
   {
     title: "Mirrors",
     slug: "mirrors",
-    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900165/Mirrors/20240920_113729_fhd99h.jpg",
+    imgPublicId: "Mirrors/20241230_170426_txopus",
   },
   {
     title: "Railings",
     slug: "railings",
-    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900088/Railings/20250624_184846_v1onh3.jpg",
+    imgPublicId: "Railings/20250128_115658_ikdy5p",
   },
   {
     title: "Shelves",
     slug: "shelves",
-    img: "https://res.cloudinary.com/dyxzzhzqs/image/upload/c_fill,w_360,h_640,f_auto,q_auto/v1750900040/Shelves/20241231_171418_nceqqo.jpg",
+    imgPublicId: "Shelves/IMG-20240702-WA0000_tew4m8",
   },
 ];
 
@@ -75,6 +75,7 @@ export default function PortfolioSection() {
     visibleItems.push(...portfolioItems.slice(0, itemsPerPage - visibleItems.length));
   }
 
+  const cloudinaryBaseUrl = "https://res.cloudinary.com/dyxzzhzqs/image/upload/";
 
   return (
     <section id="portfolio" className="portfolio-section py-5">
@@ -102,7 +103,11 @@ export default function PortfolioSection() {
                 className="d-flex justify-content-center" // Center card within its column
               >
                 <Link to={`/gallery/${item.slug}`} className="portfolio-card text-decoration-none">
-                  <img src={item.img} alt={item.title} className="portfolio-img" />
+                  <img
+                    src={`${cloudinaryBaseUrl}c_fill,w_360,h_640,f_auto,q_auto/${item.imgPublicId}`}
+                    alt={item.title}
+                    className="portfolio-img"
+                  />
                   <div className="portfolio-title-blur">
                     <span>{item.title}</span>
                   </div>

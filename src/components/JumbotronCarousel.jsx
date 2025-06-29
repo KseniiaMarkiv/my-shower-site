@@ -1,21 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Carousel, Container, Row, Col, Button } from 'react-bootstrap';
 import '../styles/JumbotronCarousel.css';
-import jumbotronSlideData from '../jumbotronImages';
 
 function JumbotronCarousel() {
   const [index, setIndex] = useState(0);
+  const [slides, setSlides] = useState([]);
+
   const handleSelect = (selectedIndex) => setIndex(selectedIndex);
+
+  useEffect(() => {
+    const url = `https://email-api-p7zg.onrender.com/api/gallery/jumbotron?t=${Date.now()}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        const sorted = [...data].sort((a, b) => {
+          const getBaseName = (item) => {
+            const name = item.public_id.split("/").pop();
+            return name.replace(/\.(jpg|jpeg|png|mp4|webm)$/, "");
+          };
+          return getBaseName(a).localeCompare(getBaseName(b));
+        });
+        setSlides(sorted);
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <div id="jumbotron" className="jumbotron-section">
       <Carousel activeIndex={index} onSelect={handleSelect} fade controls={false} indicators={false}>
-        {jumbotronSlideData.map((slide) => (
-          <Carousel.Item key={slide.id} interval={5000}>
-            {slide.type === 'video' ? (
+        {slides.map((slide, i) => (
+          <Carousel.Item key={i} interval={5000}>
+            {slide.resource_type === 'video' ? (
               <video
                 className="d-block w-100 jumbotron-video"
-                src={`${slide.cloudinaryBase}#t=0.1`}
+                src={`https://res.cloudinary.com/dyxzzhzqs/video/upload/f_auto,q_auto/${slide.public_id}#t=0.1`}
                 autoPlay
                 muted
                 loop
@@ -23,13 +41,13 @@ function JumbotronCarousel() {
               />
             ) : (
               <img
-                src={`${slide.cloudinaryBase}?q_auto:eco&f_auto`}
+                src={`https://res.cloudinary.com/dyxzzhzqs/image/upload/f_auto,q_auto/${slide.public_id}`}
                 srcSet={`
-                  ${slide.cloudinaryBase}?w=576&q_auto&f_auto 576w,
-                  ${slide.cloudinaryBase}?w=768&q_auto&f_auto 768w,
-                  ${slide.cloudinaryBase}?w=992&q_auto&f_auto 992w,
-                  ${slide.cloudinaryBase}?w=1200&q_auto&f_auto 1200w,
-                  ${slide.cloudinaryBase}?w=1600&q_auto&f_auto 1600w
+                  https://res.cloudinary.com/dyxzzhzqs/image/upload/w_576,f_auto,q_auto/${slide.public_id} 576w,
+                  https://res.cloudinary.com/dyxzzhzqs/image/upload/w_768,f_auto,q_auto/${slide.public_id} 768w,
+                  https://res.cloudinary.com/dyxzzhzqs/image/upload/w_992,f_auto,q_auto/${slide.public_id} 992w,
+                  https://res.cloudinary.com/dyxzzhzqs/image/upload/w_1200,f_auto,q_auto/${slide.public_id} 1200w,
+                  https://res.cloudinary.com/dyxzzhzqs/image/upload/w_1600,f_auto,q_auto/${slide.public_id} 1600w
                 `}
                 sizes="(max-width: 575px) 576px,
                        (max-width: 767px) 768px,
@@ -37,7 +55,7 @@ function JumbotronCarousel() {
                        (max-width: 1199px) 1200px,
                        1600px"
                 className="d-block w-100 jumbotron-img"
-                alt={slide.alt}
+                alt="Jumbotron Slide"
                 loading="lazy"
               />
             )}
@@ -46,8 +64,11 @@ function JumbotronCarousel() {
               <Container>
                 <Row className="justify-content-start">
                   <Col lg={8} md={10}>
-                    <h1 className="fs-1 jumbotron-title mb-4">{slide.title}</h1>
-                    <p className="jumbotron-text mb-4">{slide.text}</p>
+                    <h1 className="fs-1 jumbotron-title mb-4">Transform Your Space With Custom Installations</h1>
+                    <p className="jumbotron-text mb-4">
+                      Enhance the beauty and functionality of your home or business with our expert installation services.
+                      From showers to mirrors and railings, we bring your vision to life.
+                    </p>
                     <div className="jumbotron-buttons">
                       <Button variant="light" href="#how-it-works" className="btn-learn-more me-3">
                         Learn More
