@@ -1,31 +1,40 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import Masonry from 'react-masonry-css';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Masonry from "react-masonry-css";
 
-import '../styles/GalleryPage.css';
+import "../styles/GalleryPage.css";
 
 function GalleryPage() {
   const { slug } = useParams();
   const [media, setMedia] = useState([]);
+  const [fullscreenItem, setFullscreenItem] = useState(null);
 
   useEffect(() => {
-      const url = `https://email-api-p7zg.onrender.com/api/gallery/${slug}?t=${Date.now()}`; //! DON'T FORGET REMOVE cache-busting param
-      fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        console.log("Fetched gallery data:", data);
-        setMedia(data);
+    const url = `https://email-api-p7zg.onrender.com/api/gallery/${slug}?t=${Date.now()}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        const sorted = [...data].sort((a, b) => {
+          const getBaseName = (item) => {
+            const name = item.public_id.split("/").pop();
+            return name.replace(/\.(jpg|jpeg|png|mp4|webm)$/, "");
+          };
+          return getBaseName(a).localeCompare(getBaseName(b));
+        });
+        setMedia(sorted);
       })
       .catch(console.error);
   }, [slug]);
 
- // Breakpoint columns config for react-masonry-css
+  const handleOpenFullscreen = (item) => setFullscreenItem(item);
+  const handleCloseFullscreen = () => setFullscreenItem(null);
+
   const breakpointColumnsObj = {
-    default: 4, // xl and up
-    1200: 4,     // lg (≥1200px)
-    992: 3,      // md (≥992px)
-    768: 2,      // sm (≥768px)
-    576: 1       // xs (<576px)
+    default: 4,
+    1200: 4,
+    992: 3,
+    768: 2,
+    576: 1,
   };
 
   return (
@@ -36,23 +45,32 @@ function GalleryPage() {
         columnClassName="my-masonry-grid_column"
       >
         {media.map((item, index) => (
-          <div key={index} className="gallery-item">
+          <div
+            key={index}
+            className="gallery-item"
+            onClick={() => handleOpenFullscreen(item)}
+          >
             {item.resource_type === "video" ? (
               <video
-                controls
                 className="gallery-image shadow-sm"
                 preload="metadata"
                 width="100%"
+                muted
+                autoPlay
+                loop
+                playsInline
+                controls={false}
+                disablePictureInPicture
               >
                 <source
-                  src={`https://res.cloudinary.com/dyxzzhzqs/video/upload/${item.public_id}.mp4`}
+                  src={`https://res.cloudinary.com/dyxzzhzqs/video/upload/${item.public_id}`}
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
               </video>
             ) : (
               <img
-                src={`https://res.cloudinary.com/dyxzzhzqs/image/upload/w_600,c_fill/${item.public_id}.jpg`}
+                src={`https://res.cloudinary.com/dyxzzhzqs/image/upload/w_600,c_fill/${item.public_id}`}
                 alt={item.public_id}
                 className="img-fluid shadow-sm gallery-image"
                 loading="lazy"
@@ -62,6 +80,42 @@ function GalleryPage() {
           </div>
         ))}
       </Masonry>
+
+      {fullscreenItem && (
+        <div
+          className="fullscreen-overlay"
+          onClick={(e) => {
+            if (e.target.classList.contains("fullscreen-overlay")) {
+              handleCloseFullscreen();
+            }
+          }}
+        >
+          <button className="close-button" onClick={handleCloseFullscreen}>
+            ×
+          </button>
+          {fullscreenItem.resource_type === "video" ? (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="fullscreen-media"
+            >
+              <source
+                src={`https://res.cloudinary.com/dyxzzhzqs/video/upload/${fullscreenItem.public_id}`}
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <img
+              src={`https://res.cloudinary.com/dyxzzhzqs/image/upload/${fullscreenItem.public_id}`}
+              alt={fullscreenItem.public_id}
+              className="fullscreen-media"
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 }
