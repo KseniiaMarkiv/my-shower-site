@@ -9,7 +9,8 @@ function JumbotronCarousel() {
   const handleSelect = (selectedIndex) => setIndex(selectedIndex);
 
   useEffect(() => {
-    const url = `https://email-api-p7zg.onrender.com/api/gallery/jumbotron?t=${Date.now()}`;
+    const url = `${import.meta.env.VITE_API_URL}/api/gallery/${slug}?t=${Date.now()}`;
+
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

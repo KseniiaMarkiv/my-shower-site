@@ -10,14 +10,15 @@ function GalleryPage() {
   const [fullscreenItem, setFullscreenItem] = useState(null);
 
   useEffect(() => {
-    const url = `https://email-api-p7zg.onrender.com/api/gallery/${slug}?t=${Date.now()}`;
+    const url = `${import.meta.env.VITE_API_URL}/api/gallery/${slug}?t=${Date.now()}`;
+
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         const sorted = [...data].sort((a, b) => {
           const getBaseName = (item) => {
             const name = item.public_id.split("/").pop();
-            return name.replace(/\.(jpg|jpeg|png|mp4|webm)$/, "");
+            return name.replace(/\.(jpg|jpeg|png|webm)$/, '.mp4');
           };
           return getBaseName(a).localeCompare(getBaseName(b));
         });
