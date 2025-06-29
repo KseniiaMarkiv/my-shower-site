@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Assuming you have react-router-dom installed
+import { Link } from "react-router-dom";
 
-import '../styles/PortfolioSection.css'; // You'll need to update this CSS
+import '../styles/PortfolioSection.css';
 
 const portfolioItems = [
   {
     title: "Showers",
     slug: "showers",
+    // Store only the public_id, removing the base URL, transformations, and version
     imgPublicId: "Showers/triple/01-shower-triple-4_vjh4bf",
   },
   {
@@ -23,37 +24,33 @@ const portfolioItems = [
   {
     title: "Shelves",
     slug: "shelves",
-    imgPublicId: "Shelves/IMG-20240702-WA0000_tew4m8",
+    imgPublicId: "Shelves/20241231_171418_nceqqo",
   },
 ];
 
 export default function PortfolioSection() {
   const [startIndex, setStartIndex] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(3); // Default for large screens
+  const [itemsPerPage, setItemsPerPage] = useState(3);
 
-  // Function to determine itemsPerPage based on screen width
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 992) { // 'lg' breakpoint and up
+      if (window.innerWidth >= 992) {
         setItemsPerPage(3);
-      } else if (window.innerWidth >= 768) { // 'md' breakpoint and up
+      } else if (window.innerWidth >= 768) {
         setItemsPerPage(2);
-      } else { // 'sm' breakpoint and down
+      } else {
         setItemsPerPage(1);
       }
     };
 
-    // Set initial itemsPerPage on component mount
     handleResize();
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []); // Empty dependency array means this runs once on mount and cleans up on unmount
+  }, []);
 
   const handlePrev = () => {
     setStartIndex((prevIndex) => {
       const newIndex = prevIndex - 1;
-      // Loop from the end if going past the first item
       return newIndex < 0 ? portfolioItems.length - itemsPerPage : newIndex;
     });
   };
@@ -61,20 +58,17 @@ export default function PortfolioSection() {
   const handleNext = () => {
     setStartIndex((prevIndex) => {
       const newIndex = prevIndex + 1;
-      // Loop from the beginning if going past the last visible item
       return newIndex + itemsPerPage > portfolioItems.length ? 0 : newIndex;
     });
   };
 
-  // Slice items based on current startIndex and itemsPerPage
   const visibleItems = portfolioItems.slice(startIndex, startIndex + itemsPerPage);
 
-  // If there aren't enough items to fill the visible slice (e.g., at the end),
-  // wrap around to show items from the beginning. This is common for carousels.
   if (visibleItems.length < itemsPerPage) {
     visibleItems.push(...portfolioItems.slice(0, itemsPerPage - visibleItems.length));
   }
 
+  // Define your Cloudinary base URL (replace with your actual Cloudinary cloud name if different)
   const cloudinaryBaseUrl = "https://res.cloudinary.com/dyxzzhzqs/image/upload/";
 
   return (
@@ -85,24 +79,22 @@ export default function PortfolioSection() {
           See some of our recent shower, mirror, and railing installations.
         </p>
 
-        {/* Carousel Wrapper - Using Row for responsive columns */}
-        <div className="portfolio-carousel d-flex justify-content-center align-items-center gap-2"> {/* Reduced gap slightly */}
-          {/* <i className="bi bi-caret-left-fill nav-icon" onClick={handlePrev}></i> */}
+        <div className="portfolio-carousel d-flex justify-content-center align-items-center gap-2">
           <div className="portfolio-nav-arrows d-flex align-items-center">
             <i className="bi bi-caret-left-fill nav-icon" onClick={handlePrev}></i>
           </div>
 
-
-          <Row className="flex-grow-1 justify-content-center g-3"> {/* Use g-3 for Bootstrap 5 gutters */}
-            {visibleItems.map((item, index) => (
+          <Row className="flex-grow-1 justify-content-center g-3">
+            {visibleItems.map((item) => (
               <Col
-                key={item.slug} // Use slug for key for better stability if order changes
-                xs={12} // On extra small, take full width (1 card per row)
-                md={6}  // On medium (tablet), take half width (2 cards per row)
-                lg={4}  // On large (desktop), take one-third width (3 cards per row)
-                className="d-flex justify-content-center" // Center card within its column
+                key={item.slug}
+                xs={12}
+                md={6}
+                lg={4}
+                className="d-flex justify-content-center"
               >
                 <Link to={`/gallery/${item.slug}`} className="portfolio-card text-decoration-none">
+                  {/* Dynamically construct the image URL using public_id */}
                   <img
                     src={`${cloudinaryBaseUrl}c_fill,w_360,h_640,f_auto,q_auto/${item.imgPublicId}`}
                     alt={item.title}
@@ -116,11 +108,9 @@ export default function PortfolioSection() {
             ))}
           </Row>
 
-          {/* <i className="bi bi-caret-right-fill nav-icon" onClick={handleNext}></i> */}
           <div className="portfolio-nav-arrows d-flex align-items-center">
             <i className="bi bi-caret-right-fill nav-icon" onClick={handleNext}></i>
           </div>
-
         </div>
       </Container>
     </section>
