@@ -63,12 +63,13 @@ function GalleryPage() {
                 className="gallery-image shadow-sm"
                 preload="metadata"
                 width="100%"
+                autoPlay
                 muted
                 loop
                 playsInline
                 controls={false}
                 disablePictureInPicture
-                poster={`https://res.cloudinary.com/dyxzzhzqs/video/upload/f_auto,q_auto,w_600/${item.public_id}.jpg`}
+                poster={`https://res.cloudinary.com/dyxzzhzqs/video/upload/f_auto,q_auto,w_600/${item.public_id}`}
               >
                 <source
                   src={`https://res.cloudinary.com/dyxzzhzqs/video/upload/f_auto,q_auto,vc_auto,ac_none,w_600/${item.public_id}`}
