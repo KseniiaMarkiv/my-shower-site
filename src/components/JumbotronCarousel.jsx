@@ -2,29 +2,40 @@ import React, { useState, useEffect } from 'react';
 import { Carousel, Container, Row, Col, Button } from 'react-bootstrap';
 import '../styles/JumbotronCarousel.css';
 
-function JumbotronCarousel() {
+function JumbotronCarousel({ slug }) {
   const [index, setIndex] = useState(0);
   const [slides, setSlides] = useState([]);
 
   const handleSelect = (selectedIndex) => setIndex(selectedIndex);
 
   useEffect(() => {
-    const url = `${import.meta.env.VITE_API_URL}/api/gallery/${slug}?t=${Date.now()}`;
+    if (!slug) return;
+
+    const cacheKey = `jumbotron-${slug}`;
+    const cached = sessionStorage.getItem(cacheKey);
+
+    if (cached) {
+      setSlides(JSON.parse(cached));
+      return;
+    }
+
+    const url = `${import.meta.env.VITE_API_URL}/api/gallery/${slug}`;
 
     fetch(url)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
       .then((data) => {
         const sorted = [...data].sort((a, b) => {
-          const getBaseName = (item) => {
-            const name = item.public_id.split("/").pop();
-            return name.replace(/\.(jpg|jpeg|png|mp4|webm)$/, "");
-          };
+          const getBaseName = (item) => item.public_id.split("/").pop().replace(/\.(jpg|jpeg|png|mp4|webm)$/, "");
           return getBaseName(a).localeCompare(getBaseName(b));
         });
+        sessionStorage.setItem(cacheKey, JSON.stringify(sorted));
         setSlides(sorted);
       })
       .catch(console.error);
-  }, []);
+  }, [slug]);
 
   return (
     <div id="jumbotron" className="jumbotron-section">

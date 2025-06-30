@@ -10,22 +10,29 @@ function GalleryPage() {
   const [fullscreenItem, setFullscreenItem] = useState(null);
 
   useEffect(() => {
-    const url = `${import.meta.env.VITE_API_URL}/api/gallery/${slug}?t=${Date.now()}`;
+    const cacheKey = `gallery-${slug}`;
+    const cached = sessionStorage.getItem(cacheKey);
+
+    if (cached) {
+      setMedia(JSON.parse(cached));
+      return;
+    }
+
+    const url = `${import.meta.env.VITE_API_URL}/api/gallery/${slug}`;
 
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         const sorted = [...data].sort((a, b) => {
-          const getBaseName = (item) => {
-            const name = item.public_id.split("/").pop();
-            return name.replace(/\.(jpg|jpeg|png|webm)$/, '.mp4');
-          };
+          const getBaseName = (item) => item.public_id.split("/").pop().replace(/\.(jpg|jpeg|png|webm)$/, ".mp4");
           return getBaseName(a).localeCompare(getBaseName(b));
         });
+        sessionStorage.setItem(cacheKey, JSON.stringify(sorted));
         setMedia(sorted);
       })
       .catch(console.error);
   }, [slug]);
+
 
   const handleOpenFullscreen = (item) => setFullscreenItem(item);
   const handleCloseFullscreen = () => setFullscreenItem(null);
