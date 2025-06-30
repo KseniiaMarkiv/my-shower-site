@@ -64,14 +64,14 @@ function GalleryPage() {
                 preload="metadata"
                 width="100%"
                 muted
-                autoPlay
                 loop
                 playsInline
                 controls={false}
                 disablePictureInPicture
+                poster={`https://res.cloudinary.com/dyxzzhzqs/video/upload/f_auto,q_auto,w_600/${item.public_id}.jpg`}
               >
                 <source
-                  src={`https://res.cloudinary.com/dyxzzhzqs/video/upload/${item.public_id}`}
+                  src={`https://res.cloudinary.com/dyxzzhzqs/video/upload/f_auto,q_auto,vc_auto,ac_none,w_600/${item.public_id}`}
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
@@ -82,7 +82,6 @@ function GalleryPage() {
                 alt={item.public_id}
                 className="img-fluid shadow-sm gallery-image"
                 loading="lazy"
-                fetchpriority="low"
               />
             )}
           </div>
@@ -107,17 +106,18 @@ function GalleryPage() {
               muted
               loop
               playsInline
+              controls
               className="fullscreen-media"
             >
               <source
-                src={`https://res.cloudinary.com/dyxzzhzqs/video/upload/f_auto,q_auto/${fullscreenItem.public_id}`}
+                src={`https://res.cloudinary.com/dyxzzhzqs/video/upload/f_auto,q_auto,vc_auto,ac_none,w_1200/${fullscreenItem.public_id}`}
                 type="video/mp4"
               />
               Your browser does not support the video tag.
             </video>
           ) : (
             <img
-              src={`https://res.cloudinary.com/dyxzzhzqs/image/upload/f_auto,q_auto/${fullscreenItem.public_id}`}
+              src={`https://res.cloudinary.com/dyxzzhzqs/image/upload/f_auto,q_auto,w_1200/${fullscreenItem.public_id}`}
               alt={fullscreenItem.public_id}
               className="fullscreen-media"
             />
