@@ -28,12 +28,14 @@ function JumbotronCarousel({ slug }) {
       })
       .then((data) => {
         const sorted = [...data].sort((a, b) => {
-          const getBaseName = (item) => item.public_id.split("/").pop().replace(/\.(jpg|jpeg|png|mp4|webm)$/, "");
-          return getBaseName(a).localeCompare(getBaseName(b));
+          const nameA = a.name?.toLowerCase() || '';
+          const nameB = b.name?.toLowerCase() || '';
+          return nameA.localeCompare(nameB);
         });
         sessionStorage.setItem(cacheKey, JSON.stringify(sorted));
         setSlides(sorted);
       })
+
       .catch(console.error);
   }, [slug]);
 
@@ -42,35 +44,12 @@ function JumbotronCarousel({ slug }) {
       <Carousel activeIndex={index} onSelect={handleSelect} fade controls={false} indicators={false}>
         {slides.map((slide, i) => (
           <Carousel.Item key={i} interval={5000}>
-            {slide.resource_type === 'video' ? (
-              <video
-                className="d-block w-100 jumbotron-video"
-                src={`https://res.cloudinary.com/dyxzzhzqs/video/upload/f_auto,q_auto/${slide.public_id}#t=0.1`}
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-            ) : (
-              <img
-                src={`https://res.cloudinary.com/dyxzzhzqs/image/upload/f_auto,q_auto/${slide.public_id}`}
-                srcSet={`
-                  https://res.cloudinary.com/dyxzzhzqs/image/upload/w_576,f_auto,q_auto/${slide.public_id} 576w,
-                  https://res.cloudinary.com/dyxzzhzqs/image/upload/w_768,f_auto,q_auto/${slide.public_id} 768w,
-                  https://res.cloudinary.com/dyxzzhzqs/image/upload/w_992,f_auto,q_auto/${slide.public_id} 992w,
-                  https://res.cloudinary.com/dyxzzhzqs/image/upload/w_1200,f_auto,q_auto/${slide.public_id} 1200w,
-                  https://res.cloudinary.com/dyxzzhzqs/image/upload/w_1600,f_auto,q_auto/${slide.public_id} 1600w
-                `}
-                sizes="(max-width: 575px) 576px,
-                       (max-width: 767px) 768px,
-                       (max-width: 991px) 992px,
-                       (max-width: 1199px) 1200px,
-                       1600px"
-                className="d-block w-100 jumbotron-img"
-                alt="Jumbotron Slide"
-                loading="lazy"
-              />
-            )}
+            <img
+              src={slide.url} // ✅ Direct ImageKit URL from your backend
+              alt={slide.name}
+              className="d-block w-100 jumbotron-img"
+              loading="lazy"
+            />
 
             <Carousel.Caption className="jumbotron-caption">
               <Container>

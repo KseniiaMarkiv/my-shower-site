@@ -49,7 +49,7 @@ const professionalServices = [
 export default function Home() {
   return (
     <>
-      <JumbotronCarousel id="jumbotron" slug="jumbotron" />
+      <JumbotronCarousel id="jumbotron" slug="Jumbotron" />
       <ServicesSection
         id="services-professional"
         title="Explore Our Professional Installation Services with Tempered Glass"

@@ -5,60 +5,57 @@ import Masonry from "react-masonry-css";
 import "../styles/GalleryPage.css";
 
 function GalleryPage() {
-  const { slug } = useParams();
-  const [media, setMedia] = useState([]);
-  const [fullscreenItem, setFullscreenItem] = useState(null);
+  const { slug } = useParams()          // e.g. "Showers"
+  const [media, setMedia]           = useState([])
+  const [fullscreenItem, setFsItem] = useState(null)
 
   useEffect(() => {
-    const cacheKey = `gallery-${slug}`;
-    const cached = sessionStorage.getItem(cacheKey);
+    const key     = `gallery-${slug.toLowerCase()}`
+    const cached  = sessionStorage.getItem(key)
+    if (cached) return void setMedia(JSON.parse(cached))
 
-    if (cached) {
-      setMedia(JSON.parse(cached));
-      return;
-    }
+    fetch(`${import.meta.env.VITE_API_URL}/api/gallery/${slug}`)
+      .then(res => res.json())
+      .then(data => {
+        // only keep URLs in the right folder
+        const here = data.filter(item =>
+          new URL(item.url).pathname.includes(`/${slug}/`)
+        )
 
-    const url = `${import.meta.env.VITE_API_URL}/api/gallery/${slug}`;
+        // you can sort however you like, here by the filename
+        here.sort((a, b) => a.name.localeCompare(b.name))
 
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        const sorted = [...data].sort((a, b) => {
-          const getBaseName = (item) => item.public_id.split("/").pop().replace(/\.(jpg|jpeg|png|webm)$/, ".mp4");
-          return getBaseName(a).localeCompare(getBaseName(b));
-        });
-        sessionStorage.setItem(cacheKey, JSON.stringify(sorted));
-        setMedia(sorted);
+        sessionStorage.setItem(key, JSON.stringify(here))
+        setMedia(here)
       })
-      .catch(console.error);
-  }, [slug]);
+      .catch(console.error)
+  }, [slug])
 
+  const openFs  = i => setFsItem(i)
+  const closeFs = () => setFsItem(null)
 
-  const handleOpenFullscreen = (item) => setFullscreenItem(item);
-  const handleCloseFullscreen = () => setFullscreenItem(null);
-
-  const breakpointColumnsObj = {
+  const breakpoints = {
     default: 4,
-    1200: 4,
-    992: 3,
-    768: 2,
-    576: 1,
-  };
+    1200:    4,
+    992:     3,
+    768:     2,
+    576:     1,
+  }
 
   return (
     <div className="container gallery-page pb-4">
       <Masonry
-        breakpointCols={breakpointColumnsObj}
+        breakpointCols={breakpoints}
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        {media.map((item, index) => (
+        {media.map((item, i) => (
           <div
-            key={index}
+            key={i}
             className="gallery-item"
-            onClick={() => handleOpenFullscreen(item)}
+            onClick={() => openFs(item)}
           >
-            {item.resource_type === "video" ? (
+            {item.file_type === "non-image" ? (
               <video
                 className="gallery-image shadow-sm"
                 preload="metadata"
@@ -68,19 +65,18 @@ function GalleryPage() {
                 loop
                 playsInline
                 controls={false}
-                disablePictureInPicture
-                poster={`https://res.cloudinary.com/dyxzzhzqs/video/upload/f_auto,q_auto,w_600/${item.public_id}`}
+                poster={`${item.url}?tr=w-600`}
               >
                 <source
-                  src={`https://res.cloudinary.com/dyxzzhzqs/video/upload/f_auto,q_auto,vc_auto,ac_none,w_600/${item.public_id}`}
+                  src={`${item.url}?tr=format=mp4,w-600`}
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
               </video>
             ) : (
               <img
-                src={`https://res.cloudinary.com/dyxzzhzqs/image/upload/w_600,c_fill,f_auto,q_auto/${item.public_id}`}
-                alt={item.public_id}
+                src={`${item.url}?tr=w-600`}
+                alt={item.name}
                 className="img-fluid shadow-sm gallery-image"
                 loading="lazy"
               />
@@ -92,16 +88,14 @@ function GalleryPage() {
       {fullscreenItem && (
         <div
           className="fullscreen-overlay"
-          onClick={(e) => {
-            if (e.target.classList.contains("fullscreen-overlay")) {
-              handleCloseFullscreen();
-            }
-          }}
+          onClick={e =>
+            e.target.classList.contains("fullscreen-overlay") &&
+            closeFs()
+          }
         >
-          <button className="close-button" onClick={handleCloseFullscreen}>
-            ×
-          </button>
-          {fullscreenItem.resource_type === "video" ? (
+          <button className="close-button" onClick={closeFs}>×</button>
+
+          {fullscreenItem.file_type === "non-image" ? (
             <video
               autoPlay
               muted
@@ -111,22 +105,21 @@ function GalleryPage() {
               className="fullscreen-media"
             >
               <source
-                src={`https://res.cloudinary.com/dyxzzhzqs/video/upload/f_auto,q_auto,vc_auto,ac_none,w_1200/${fullscreenItem.public_id}`}
+                src={`${fullscreenItem.url}?tr=format=mp4,w-1200`}
                 type="video/mp4"
               />
-              Your browser does not support the video tag.
             </video>
           ) : (
             <img
-              src={`https://res.cloudinary.com/dyxzzhzqs/image/upload/f_auto,q_auto,w_1200/${fullscreenItem.public_id}`}
-              alt={fullscreenItem.public_id}
+              src={`${fullscreenItem.url}?tr=w-1200`}
+              alt={fullscreenItem.name}
               className="fullscreen-media"
             />
           )}
         </div>
       )}
     </div>
-  );
+  )
 }
 
 export default GalleryPage;

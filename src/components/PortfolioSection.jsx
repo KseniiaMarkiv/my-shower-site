@@ -4,27 +4,28 @@ import { Link } from "react-router-dom";
 
 import '../styles/PortfolioSection.css';
 
+const imageKitBaseUrl = "https://ik.imagekit.io/6o2yw6zpa/";
+
 const portfolioItems = [
   {
     title: "Showers",
     slug: "showers",
-    // Store only the public_id, removing the base URL, transformations, and version
-    imgPublicId: "Showers/triple/01-shower-triple-4_vjh4bf",
+    imgPublicId: "Showers/01-shower-triple-4.webp",
   },
   {
     title: "Mirrors",
     slug: "mirrors",
-    imgPublicId: "Mirrors/20241230_170426_txopus",
+    imgPublicId: "Mirrors/20241230_170426.webp",
   },
   {
     title: "Railings",
     slug: "railings",
-    imgPublicId: "Railings/20250128_115658_ikdy5p",
+    imgPublicId: "Railings/20250128_115658.webp",
   },
   {
     title: "Shelves",
     slug: "shelves",
-    imgPublicId: "Shelves/20241231_171418_nceqqo",
+    imgPublicId: "Shelves/20241231_171418.webp",
   },
 ];
 
@@ -63,13 +64,9 @@ export default function PortfolioSection() {
   };
 
   const visibleItems = portfolioItems.slice(startIndex, startIndex + itemsPerPage);
-
   if (visibleItems.length < itemsPerPage) {
     visibleItems.push(...portfolioItems.slice(0, itemsPerPage - visibleItems.length));
   }
-
-  // Define your Cloudinary base URL (replace with your actual Cloudinary cloud name if different)
-  const cloudinaryBaseUrl = "https://res.cloudinary.com/dyxzzhzqs/image/upload/";
 
   return (
     <section id="portfolio" className="portfolio-section py-5">
@@ -94,11 +91,11 @@ export default function PortfolioSection() {
                 className="d-flex justify-content-center"
               >
                 <Link to={`/gallery/${item.slug}`} className="portfolio-card text-decoration-none">
-                  {/* Dynamically construct the image URL using public_id */}
                   <img
-                    src={`${cloudinaryBaseUrl}c_fill,w_360,h_640,f_auto,q_auto/${item.imgPublicId}`}
+                    src={`${imageKitBaseUrl}${item.imgPublicId}?tr=w-360,h-640,fo-auto,q-80`}
                     alt={item.title}
                     className="portfolio-img"
+                    loading="lazy"
                   />
                   <div className="portfolio-title-blur">
                     <span>{item.title}</span>
