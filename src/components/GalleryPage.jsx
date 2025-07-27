@@ -1,46 +1,44 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import Masonry from "react-masonry-css";
-
 import "../styles/GalleryPage.css";
 
-function GalleryPage() {
-  const { slug } = useParams()          // e.g. "Showers"
-  const [media, setMedia]           = useState([])
-  const [fullscreenItem, setFsItem] = useState(null)
+function GalleryPage({ tabSlug }) {
+  const [media, setMedia] = useState([]);
+  const [fullscreenItem, setFsItem] = useState(null);
 
   useEffect(() => {
-    const key     = `gallery-${slug.toLowerCase()}`
-    const cached  = sessionStorage.getItem(key)
-    if (cached) return void setMedia(JSON.parse(cached))
+    if (!tabSlug) return;
 
-    fetch(`${import.meta.env.VITE_API_URL}/api/gallery/${slug}`)
-      .then(res => res.json())
-      .then(data => {
-        // only keep URLs in the right folder
-        const here = data.filter(item =>
-          new URL(item.url).pathname.includes(`/${slug}/`)
-        )
+    const key = `gallery-${tabSlug.toLowerCase()}`;
+    const cached = sessionStorage.getItem(key);
+    if (cached) {
+      setMedia(JSON.parse(cached));
+      return;
+    }
 
-        // you can sort however you like, here by the filename
-        here.sort((a, b) => a.name.localeCompare(b.name))
-
-        sessionStorage.setItem(key, JSON.stringify(here))
-        setMedia(here)
+    fetch(`${import.meta.env.VITE_API_URL}/api/gallery/${tabSlug}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const filtered = data.filter((item) =>
+          new URL(item.url).pathname.includes(`/${tabSlug}/`)
+        );
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+        sessionStorage.setItem(key, JSON.stringify(filtered));
+        setMedia(filtered);
       })
-      .catch(console.error)
-  }, [slug])
+      .catch(console.error);
+  }, [tabSlug]);
 
-  const openFs  = i => setFsItem(i)
-  const closeFs = () => setFsItem(null)
+  const openFs = (item) => setFsItem(item);
+  const closeFs = () => setFsItem(null);
 
   const breakpoints = {
     default: 4,
-    1200:    4,
-    992:     3,
-    768:     2,
-    576:     1,
-  }
+    1200: 4,
+    992: 3,
+    768: 2,
+    576: 1,
+  };
 
   return (
     <div className="container gallery-page pb-4">
@@ -88,12 +86,14 @@ function GalleryPage() {
       {fullscreenItem && (
         <div
           className="fullscreen-overlay"
-          onClick={e =>
+          onClick={(e) =>
             e.target.classList.contains("fullscreen-overlay") &&
             closeFs()
           }
         >
-          <button className="close-button" onClick={closeFs}>×</button>
+          <button className="close-button" onClick={closeFs}>
+            ×
+          </button>
 
           {fullscreenItem.file_type === "non-image" ? (
             <video
@@ -119,7 +119,7 @@ function GalleryPage() {
         </div>
       )}
     </div>
-  )
+  );
 }
 
 export default GalleryPage;
