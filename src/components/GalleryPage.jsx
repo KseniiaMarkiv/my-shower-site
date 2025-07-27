@@ -41,7 +41,7 @@ function GalleryPage({ tabSlug }) {
   };
 
   return (
-    <div className="container gallery-page pb-4">
+    <div className={`container gallery-page pb-4 fade-gallery ${media.length ? "show" : ""}`}>
       <Masonry
         breakpointCols={breakpoints}
         className="my-masonry-grid"

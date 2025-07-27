@@ -113,7 +113,7 @@ const CustomNavbar = () => {
               <NavDropdown.Item
                 key={item.slug}
                 as={HashLink}
-                to={`/gallery/${item.slug}`}
+                to="/#portfolio"
                 onClick={handleNavLinkClick}
                 className="text-center"
               >

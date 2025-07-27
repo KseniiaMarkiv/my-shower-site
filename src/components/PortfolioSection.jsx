@@ -50,7 +50,7 @@ export default function PortfolioSection() {
           </ButtonGroup>
         </div>
 
-        <GalleryPage slug={activeSlug} />
+        <GalleryPage tabSlug={activeSlug} />
       </Container>
     </section>
   );

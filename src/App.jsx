@@ -35,14 +35,6 @@ export default function App() {
     <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route
-        path="/gallery/:slug"
-        element={
-          <Suspense fallback={<SpinnerFallback />}>
-            <GalleryPage />
-          </Suspense>
-        }
-      />
     </Routes>
     <AboutUsAndFooter />
   </BrowserRouter>

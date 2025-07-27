@@ -1,7 +1,3 @@
-.gallery-page {
-  padding-top: 65px;
-}
-
 .my-masonry-grid {
   display: flex;
   margin-left: -1rem;
@@ -29,6 +25,16 @@
   transform: scale(1.02);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
+.fade-gallery {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-gallery.show {
+  opacity: 1;
+}
+
 
 .fullscreen-overlay {
   position: fixed;
