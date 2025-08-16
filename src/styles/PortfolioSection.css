@@ -80,6 +80,16 @@
   color: #000;
 }
 
+/* Active state for portfolio tab buttons */
+.portfolio-section .btn-outline-dark.active,
+.portfolio-section .btn-outline-dark:active,
+.portfolio-section .btn-outline-dark:focus {
+  background-color: #212529 !important;
+  color: #fff !important;
+  border-color: #212529 !important;
+}
+
+
 /* Media Query */
 /* @media (max-width: 575.98px) {
 

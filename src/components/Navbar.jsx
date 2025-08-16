@@ -1,14 +1,15 @@
-import { useEffect, useState, useRef } from 'react'; // Import useRef
+import { useEffect, useState, useRef } from 'react';
 import { Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 
 import '../styles/Navbar.css';
 
+// Keep slugs exactly as your ImageKit folders & Portfolio buttons
 const galleryItems = [
-  { name: 'Showers', slug: 'showers' },
-  { name: 'Mirrors', slug: 'mirrors' },
-  { name: 'Railings', slug: 'railings' },
-  { name: 'Shelves', slug: 'shelves' },
+  { name: 'Showers',  slug: 'Showers'  },
+  { name: 'Mirrors',  slug: 'Mirrors'  },
+  { name: 'Railings', slug: 'Railings' },
+  { name: 'Shelves',  slug: 'Shelves'  },
 ];
 
 const CustomNavbar = () => {
@@ -17,64 +18,58 @@ const CustomNavbar = () => {
   const [expanded, setExpanded] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
 
-
-  const navbarRef = useRef(null); // Create a ref for the Navbar component
+  const navbarRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
-      if (window.scrollY > 20 && expanded) {
-        setExpanded(false); // Collapse on scroll if expanded
-      }
+      if (window.scrollY > 20 && expanded) setExpanded(false);
     };
-
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, [expanded]);
 
-  // Effect for handling clicks outside the navbar
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // If the navbar is expanded and the click is outside the navbar element
       if (expanded && navbarRef.current && !navbarRef.current.contains(event.target)) {
         setExpanded(false);
       }
     };
-
-    if (expanded) {
-      // Add event listener when navbar is expanded
-      document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      // Remove event listener when navbar is collapsed
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
-
-    // Cleanup: remove event listener when component unmounts or expanded changes
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [expanded]); // Re-run this effect when 'expanded' state changes
+    if (expanded) document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [expanded]);
 
   const handleToggleClick = () => {
     setAnimate(true);
     setTimeout(() => setAnimate(false), 1500);
-    setExpanded(!expanded); // Toggle the expanded state
+    setExpanded(!expanded);
   };
 
-  // Function to collapse the navbar (used for nav links and buttons)
-  const handleNavLinkClick = () => {
-    setExpanded(false);
-  };
+  const handleNavLinkClick = () => setExpanded(false);
 
   useEffect(() => {
-  if (!expanded) {
-    const timer = setTimeout(() => setShowGallery(true), 400);
-    return () => clearTimeout(timer);
-  } else {
-    setShowGallery(false);
-  }
-}, [expanded]);
+    if (!expanded) {
+      const timer = setTimeout(() => setShowGallery(true), 400);
+      return () => clearTimeout(timer);
+    } else {
+      setShowGallery(false);
+    }
+  }, [expanded]);
 
+  // Single source of truth for Gallery -> Portfolio activation + scroll
+  const handleGalleryJump = (slug) => (e) => {
+    e?.preventDefault?.();
+    setExpanded(false); // close menu
+
+    // remember choice for PortfolioSection + refresh-safe
+    sessionStorage.setItem('portfolioTab', slug);
+
+    // live update to mounted PortfolioSection
+    window.dispatchEvent(new CustomEvent('portfolio:set-tab', { detail: slug }));
+
+    // smooth scroll to the section
+    document.querySelector('#portfolio')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <Navbar
@@ -85,23 +80,24 @@ const CustomNavbar = () => {
       expanded={expanded}
       onToggle={() => setExpanded(!expanded)}
     >
+      {/* Mobile top row */}
+      <div className="d-flex justify-content-between align-items-center d-lg-none w-100 mobile-navbar-container">
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className={`custom-navbar-toggle navbar-toggler collapsed ms-3 ${animate ? 'animate-lines' : ''}`}
+          onClick={handleToggleClick}
+        >
+          <div className="line top-line"></div>
+          <div className="line middle-line"></div>
+          <div className="line bottom-line"></div>
+        </Navbar.Toggle>
 
-    <div className="d-flex justify-content-between align-items-center d-lg-none w-100 mobile-navbar-container">
-      <Navbar.Toggle
-        aria-controls="basic-navbar-nav"
-        className={`custom-navbar-toggle navbar-toggler collapsed ms-3 ${animate ? 'animate-lines' : ''}`}
-        onClick={handleToggleClick}
-      >
-        <div className="line top-line"></div>
-        <div className="line middle-line"></div>
-        <div className="line bottom-line"></div>
-      </Navbar.Toggle>
-
+        {/* Mobile quick Gallery button with working tab set */}
         {!expanded && showGallery && (
           <NavDropdown
             title={
               <button className="btn btn-dark gallery-menu d-flex align-items-center gap-2">
-                <span className="dropdown-caret">&#9662;</span> {/* down arrow on the left */}
+                <span className="dropdown-caret">&#9662;</span>
                 Gallery
               </button>
             }
@@ -114,7 +110,7 @@ const CustomNavbar = () => {
                 key={item.slug}
                 as={HashLink}
                 to="/#portfolio"
-                onClick={handleNavLinkClick}
+                onClick={handleGalleryJump(item.slug)}  // <-- set tab + scroll
                 className="text-center"
               >
                 {item.name}
@@ -122,26 +118,28 @@ const CustomNavbar = () => {
             ))}
           </NavDropdown>
         )}
-    </div>
+      </div>
 
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">
         <Nav className="ms-lg-5 text-secondary gap-lg-4">
           <Nav.Link as={HashLink} to="/#jumbotron" className="text-center" onClick={handleNavLinkClick}>Home</Nav.Link>
           <Nav.Link as={HashLink} to="/#testimonials" className="text-center" onClick={handleNavLinkClick}>Testimonials</Nav.Link>
-          
+
+          {/* Desktop Gallery dropdown */}
           <NavDropdown title="Gallery" id="gallery-dropdown" className="text-center">
             {galleryItems.map((item) => (
               <NavDropdown.Item
                 key={item.slug}
                 as={HashLink}
-                to="#portfolio"
-                onClick={handleNavLinkClick}
+                to="/#portfolio"
+                onClick={handleGalleryJump(item.slug)}  // <-- set tab + scroll
                 className="text-center"
               >
                 {item.name}
               </NavDropdown.Item>
             ))}
           </NavDropdown>
+
           <Nav.Link as={HashLink} to="/#about-us" className="text-center" onClick={handleNavLinkClick}>Contact Us</Nav.Link>
 
           <NavDropdown title="More Options" id="more-options-dropdown" className="text-center">
@@ -165,15 +163,9 @@ const CustomNavbar = () => {
           </Button>
           <a
             href="mailto:myglassstyle@gmail.com"
-            onClick={(e) => { // Use 'e' for event object
-              console.log('Contact button clicked inside Navbar');
-              handleNavLinkClick();
-            }}
+            onClick={() => handleNavLinkClick()}
           >
-            <Button
-              variant="dark"
-              className="navbar-contact-button px-4 py-1 text-sm rounded-0"
-            >
+            <Button variant="dark" className="navbar-contact-button px-4 py-1 text-sm rounded-0">
               Contact
             </Button>
           </a>
