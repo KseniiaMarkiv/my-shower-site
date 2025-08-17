@@ -3,6 +3,19 @@ import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 
 import '../styles/ServicesSection.css';
 
+// Email Quote
+const MAIL_TO = "mailto:myglassstyle@gmail.com";
+const SUBJECT = "Request Quote";
+const BODY = `Hi! I’d like a free quote for glass installation.
+
+Project type: [shower / mirror / railing]
+City:
+
+Your question (optional):`;
+
+const MAIL_URL = `${MAIL_TO}?subject=${encodeURIComponent(SUBJECT)}&body=${encodeURIComponent(BODY)}`;
+
+
 function ServicesSection({ id, subheading, title, subtitle, services, showButtons = true }) {
   return (
     <section id={id} className="services-section pt-5 my-5">
@@ -44,13 +57,12 @@ function ServicesSection({ id, subheading, title, subtitle, services, showButton
             <Col>
               <Button variant="outline-dark" href="#how-it-works" className="me-3">Learn More</Button>
               <a
-                href="mailto:myglassstyle@gmail.com"
-                onClick={() => {
-                  console.log('Contact button clicked inside Services');
-                }}
+                href={MAIL_URL}
+                onClick={() => handleNavLinkClick && handleNavLinkClick()}
               >
                 <Button
                   variant="outline-dark"
+                  title="Email us to request a quote"
                 >
                   Contact <i className="bi bi-chevron-right ms-2"></i>
                 </Button>

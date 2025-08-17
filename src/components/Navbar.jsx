@@ -12,6 +12,19 @@ const galleryItems = [
   { name: 'Shelves',  slug: 'Shelves'  },
 ];
 
+// Email Quote
+const MAIL_TO = "mailto:myglassstyle@gmail.com";
+const SUBJECT = "Request Quote";
+const BODY = `Hi! I’d like a free quote for glass installation.
+
+Project type: [shower / mirror / railing]
+City:
+
+Your question (optional):`;
+
+const MAIL_URL = `${MAIL_TO}?subject=${encodeURIComponent(SUBJECT)}&body=${encodeURIComponent(BODY)}`;
+
+
 const CustomNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [animate, setAnimate] = useState(false);
@@ -110,7 +123,7 @@ const CustomNavbar = () => {
                 key={item.slug}
                 as={HashLink}
                 to="/#portfolio"
-                onClick={handleGalleryJump(item.slug)}  // <-- set tab + scroll
+                onClick={handleGalleryJump(item.slug)}
                 className="text-center"
               >
                 {item.name}
@@ -126,13 +139,13 @@ const CustomNavbar = () => {
           <Nav.Link as={HashLink} to="/#testimonials" className="text-center" onClick={handleNavLinkClick}>Testimonials</Nav.Link>
 
           {/* Desktop Gallery dropdown */}
-          <NavDropdown title="Gallery" id="gallery-dropdown" className="text-center">
+          <NavDropdown title="Gallery" id="gallery-dropdown" className="text-center fw-bold">
             {galleryItems.map((item) => (
               <NavDropdown.Item
                 key={item.slug}
                 as={HashLink}
                 to="/#portfolio"
-                onClick={handleGalleryJump(item.slug)}  // <-- set tab + scroll
+                onClick={handleGalleryJump(item.slug)}
                 className="text-center"
               >
                 {item.name}
@@ -140,7 +153,7 @@ const CustomNavbar = () => {
             ))}
           </NavDropdown>
 
-          <Nav.Link as={HashLink} to="/#about-us" className="text-center" onClick={handleNavLinkClick}>Contact Us</Nav.Link>
+          <Nav.Link as={HashLink} to="#quote" className="text-center" onClick={handleNavLinkClick}>Contact Us</Nav.Link>
 
           <NavDropdown title="More Options" id="more-options-dropdown" className="text-center">
             <NavDropdown.Item as={HashLink} to="/#services-short" className="text-center" onClick={handleNavLinkClick}>Installation Types</NavDropdown.Item>
@@ -162,13 +175,18 @@ const CustomNavbar = () => {
             Get a Free Quote
           </Button>
           <a
-            href="mailto:myglassstyle@gmail.com"
-            onClick={() => handleNavLinkClick()}
+            href={MAIL_URL}
+            onClick={() => handleNavLinkClick && handleNavLinkClick()}
           >
-            <Button variant="dark" className="navbar-contact-button px-4 py-1 text-sm rounded-0">
+            <Button
+              variant="dark"
+              className="navbar-contact-button px-4 py-1 text-sm rounded-0"
+              title="Email us to request a quote"
+            >
               Contact
             </Button>
           </a>
+
         </Nav>
       </Navbar.Collapse>
     </Navbar>
