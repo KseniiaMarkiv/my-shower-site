@@ -36,14 +36,60 @@ export default function AboutUsAndFooter() {
               </li>
               <li><i className="bi bi-telephone me-2"></i>
                 <a
-                  href="sms:+17328142159"
+                  href="sms:+18483528480"
                   className="text-muted text-decoration-none"
                 >
-                  (732) 814-21-59
+                  (848) 352-84-80
                 </a>
               </li>
               <li><i className="bi bi-geo-alt me-2"></i>New Jersey, USA</li>
             </ul>
+
+            {/* === SOCIAL === */}
+            <div className="mt-4 text-md-end text-center">
+              <h6 className="text-dark mb-2 me-3">Find us on</h6>
+
+              <div className="d-inline-flex align-items-center gap-3 fs-4">
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/company/myglassstyle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="MyGlassStyle on LinkedIn"
+                  className="text-muted social-icon"
+                  title="LinkedIn"
+                >
+                  <i className="bi bi-linkedin"></i>
+                </a>
+
+                {/* YouTube */}
+                <a
+                  href="https://www.youtube.com/@myglassstyle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="MyGlassStyle on YouTube"
+                  className="text-muted social-icon"
+                  title="YouTube"
+                >
+                  <i className="bi bi-youtube"></i>
+                </a>
+
+                {/* TikTok (use Bootstrap Icon if available, otherwise inline SVG fallback) */}
+                <a
+                  href="https://www.tiktok.com/@myglassstyle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="MyGlassStyle on TikTok"
+                  className="text-muted social-icon"
+                  title="TikTok"
+                >
+                  {/* Try Bootstrap Icon first */}
+                  <i className="bi bi-tiktok d-inline-block" style={{ lineHeight: 1 }}></i>
+
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
 

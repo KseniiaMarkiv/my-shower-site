@@ -6,3 +6,45 @@
   color: #0d6efd !important;
   text-decoration: underline;
 }
+
+/* Base state */
+.social-icon {
+  color: #6c757d !important;        /* muted gray, not Bootstrap link color */
+  transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
+  text-decoration: none !important; /* prevent underline */
+}
+
+/* Lift effect */
+.social-icon:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* --- Brand colors --- */
+.social-icon[href*="linkedin.com"]:hover {
+  color: #0a66c2 !important; /* LinkedIn blue */
+}
+
+.social-icon[href*="youtube.com"]:hover {
+  color: #ff0000 !important; /* YouTube red */
+}
+
+/* --- TikTok split color effect --- */
+.social-icon[href*="tiktok.com"]:hover {
+  color: #fff !important; /* base white instead of Bootstrap blue */
+}
+
+.social-icon[href*="tiktok.com"]:hover .bi-tiktok::before {
+  text-shadow:
+    -1px 0 #25f4ee,  /* cyan glow left */
+     1px 0 #fe2c55;  /* pink glow right */
+}
+
+/* optional stronger effect */
+@media (hover: hover) {
+  .social-icon[href*="tiktok.com"]:hover .bi-tiktok::before {
+    text-shadow:
+      -2px 0 #25f4ee,
+       2px 0 #fe2c55;
+  }
+}
