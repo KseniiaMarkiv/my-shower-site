@@ -1,4 +1,6 @@
 import '../styles/AboutUsAndFooter.css';
+import LinkedInBadges from "../components/LinkedInBadges";
+
 
 export default function AboutUsAndFooter() {
   return (
@@ -88,6 +90,8 @@ export default function AboutUsAndFooter() {
 
                 </a>
               </div>
+              {/* === LinkedIn profile previews + expandable badges === */}
+              <LinkedInBadges />
             </div>
 
           </div>

@@ -48,3 +48,55 @@
        2px 0 #fe2c55;
   }
 }
+
+
+/* ---- Fixed bottom-right badge (collapsed) ---- */
+.li-reveal--fixed {
+  position: fixed;
+  right: 0px;
+  z-index: 9998;
+
+  width: 132px;
+  overflow: hidden;
+  outline: none;
+
+  max-height: 46px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  transition:
+    max-height 320ms ease,
+    width 320ms ease,
+    transform 320ms ease,
+    box-shadow 200ms ease;
+}
+
+/* keep the iframe filling the wrapper */
+.li-reveal--fixed .LI-profile-badge,
+.li-reveal--fixed iframe {
+  border: 0;
+  display: block;
+}
+
+/* Optional: cap color to cover tiny transparent padding in header */
+.li-reveal--fixed::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 46px;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+
+/* ---- Hover: expand + slide left & down ---- */
+.li-reveal--fixed:hover,
+.li-reveal--fixed:focus,
+.li-reveal--fixed:focus-within {
+  width: 260px;
+  max-height: 320px;
+  transform: translate(-8px, 12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+.li-reveal--fixed:hover::before,
+.li-reveal--fixed:focus::before,
+.li-reveal--fixed:focus-within::before {
+  opacity: 0;
+}

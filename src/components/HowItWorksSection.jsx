@@ -19,7 +19,7 @@ const steps = [
   },
   {
     title: '50% Prepayment',
-    description: 'Confirm the order with a 50% deposit to start the production process.',
+    description: '50% deposit after contract signing to secure your order and start glass production.',
     icon: 'bi-cash-coin',
   },
   {
