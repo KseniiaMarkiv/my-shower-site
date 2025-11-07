@@ -4,7 +4,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import '../styles/QuoteSection.css'; // You might need to create this CSS file
 
 // WhatsApp Quote
-const WA_PHONE = '17328142159';
+const WA_PHONE = '18483528480';
 const WA_TEXT  = 'Hi! I’d like a free quote for glass installation.';
 const WA_URL   = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(WA_TEXT)}`;
 
