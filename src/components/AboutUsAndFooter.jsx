@@ -13,11 +13,12 @@ export default function AboutUsAndFooter() {
           <div className="col-md-8 pe-5 mb-4 about-us-div text-lg-start text-md-center">
             <h4 className="text-dark mb-3">About MyGlassStyle</h4>
             <p className="text-muted mb-0">
-              Glass installation services are provided by <strong className="text-decoration-underline">Serhii Markiv</strong>, Sole Proprietor, under the brand name MyGlassStyle. 
-              We specializes in the custom installation of tempered glass showers, railings, mirrors, and shelving.
+              Glass installation & services are provided by <strong>MyGlassStyle</strong> - a New Jersey brand managed by <strong className="text-decoration-underline">Kseniia Markiv</strong> and supported by a lead specialist with 
+              2 years of U.S. glass installation experience and 15+ years in international construction.  
+              We specialize in the custom installation of tempered glass showers, railings, mirrors, and shelving. 
               Using premium-grade glass and hardware to ensure strength, safety, and sleek aesthetics in every project. <br /><br />
-              From clear to frosted glass, all products are made to order. We take pride in delivering clean, precise, and punctual service — always with attention to detail.
-            </p><br /><br />
+              From clear to Starfire glass, all products are made to order. We take pride in delivering clean, precise, and punctual service - always with attention to detail.
+            </p><br />
             <strong>Licensed NJ Home Improvement Contractor — HIC #13VH13832500</strong>
           </div>
 
@@ -103,7 +104,7 @@ export default function AboutUsAndFooter() {
         <div className="row">
           <div className="col-md-6 mb-5">
             <p className="mb-0 text-dark">
-              © <span className="mx-1">2025</span> Serhii Markiv | MyGlassStyle
+              © <span className="mx-1">2025</span> MyGlassStyle | Kseniia Markiv. 
               <span className="ms-2">All rights reserved.</span>
             </p>
           </div>
