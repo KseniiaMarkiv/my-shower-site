@@ -55,7 +55,7 @@ function JumbotronCarousel({ slug }) {
               <Container>
                 <Row className="justify-content-start">
                   <Col lg={8} md={10}>
-                    <h1 className="fs-1 jumbotron-title mb-4">Residential & Commercial Tempered Glass Installations & Services in NJ</h1>
+                    <h1 className="fs-1 jumbotron-title mb-4">Residential & Commercial Tempered Glass Installation & Service in NJ</h1>
                     <p className="jumbotron-text mb-4">
                       Enhance the beauty and functionality of your home or business with our expert installation services.
                       From showers to mirrors and railings, we bring your vision to life.
