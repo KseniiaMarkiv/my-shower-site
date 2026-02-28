@@ -29,6 +29,22 @@
   color: #ff0000 !important; /* YouTube red */
 }
 
+.social-icon[href*="instagram.com"]:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5af19 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: brightness(1.2) saturate(1.3);
+}
+
+.social-icon[href*="facebook.com"]:hover {
+  color: #1877f2 !important; /* Facebook blue */
+}
+
+.social-icon[href*="pinterest.com"]:hover {
+  color: #e60023 !important; /* Pinterest red */
+}
+
 /* --- TikTok split color effect --- */
 .social-icon[href*="tiktok.com"]:hover {
   color: #fff !important; /* base white instead of Bootstrap blue */
@@ -100,3 +116,4 @@
 .li-reveal--fixed:focus-within::before {
   opacity: 0;
 }
+

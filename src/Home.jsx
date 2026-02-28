@@ -58,7 +58,7 @@ export default function Home() {
         showButtons={true}
       />
       <HowItWorksSection />
-      <TestimonialSection id="testimonials" />
+      {/* <TestimonialSection id="testimonials" /> */}
       <ServicesSection
         id="services-short"
         className="py-5 my-5"

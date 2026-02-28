@@ -15,19 +15,23 @@ export default function AboutUsAndFooter() {
             <p className="text-muted mb-0">
               Glass installation & services are provided by <strong>MyGlassStyle</strong> - a New Jersey brand managed by <strong className="text-decoration-underline">Kseniia Markiv</strong> and supported by a lead specialist with 
               2 years of U.S. glass installation experience and 15+ years in international construction.  
-              We specialize in the custom installation of tempered glass showers, railings, mirrors, and shelving. 
-              Using premium-grade glass and hardware to ensure strength, safety, and sleek aesthetics in every project. <br /><br />
-              From clear to Starfire glass, all products are made to order. We take pride in delivering clean, precise, and punctual service - always with attention to detail.
+              We work only with <span className="badge rounded-pill text-bg-light border fs-6 text-dark-emphasis me-2">reliable & well-known</span> glass and hardware suppliers in New Jersey, ensuring consistent premium quality and dependable materials for every project.
+              We specialize in the <span className="badge rounded-pill text-bg-light border fs-6 text-dark-emphasis me-2">installation & service</span> of tempered glass showers (custom-sized and sliding showers), straight and corner railings, mirrors, shelving, partitions and tabletops. 
+              <br /><br />
+              We partner with <span className="badge rounded-pill text-bg-light border fs-6 text-dark-emphasis me-2">General contractors</span>
+<span className="badge rounded-pill text-bg-light border fs-6 text-dark-emphasis me-2">Builders</span> as a reliable glass installation subcontractor, supporting projects of all sizes - from remodels to high-end custom construction. We understand construction <span className="badge rounded-pill text-bg-light border fs-6 text-dark-emphasis me-2">timelines </span>, <span className="badge rounded-pill text-bg-light border fs-6 text-dark-emphasis me-2">on-site coordination</span>, and the demands of working within an active job site. Our team delivers precise measurements, clean installations, and strictly on-schedule completion to help keep your project running smoothly and without delays.
+              <br /><br />
+              From Clear to Starfire glass, all products are made to order. We take pride in delivering clean, precise, and punctual service - always with attention to detail.
             </p><br />
-            <strong>Licensed NJ Home Improvement Contractor — HIC #13VH13832500</strong>
+            <strong>Licensed & Insured NJ Home Improvement Contractor — HIC #13VH13938900</strong>
           </div>
 
           {/* === CONTACT US === */}
           <div className="col-md-4 mb-4">
             <h4 className="text-dark mb-3">Contact Us</h4>
-            <p className="text-muted mb-3">
+            {/* <p className="text-muted mb-3">
               You got a project in mind and you need a free measurement? <br /> Reach out today!
-            </p>
+            </p> */}
             <ul className="list-unstyled text-muted">
               <li><i className="bi bi-envelope me-2"></i>
                 <a
@@ -47,10 +51,29 @@ export default function AboutUsAndFooter() {
               </li>
               <li><i className="bi bi-geo-alt me-2"></i>New Jersey, USA</li>
             </ul>
+            {/* === WORK HOURS === */}
+            <div className="mt-4">
+              <h5 className="text-dark fw-semibold mb-2">Work hours:</h5>
 
+              <div className="mb-2">
+                <div className="fw-semibold">Technician:</div>
+                <div className="text-muted">8:00 AM–8:00 PM, 7 days a week</div>
+              </div>
+
+              <div className="mb-2">
+                <div className="fw-semibold">Office:</div>
+                <div className="text-muted">• Weekdays 10:00 AM–8:00 PM</div>
+                <div className="text-muted">• Weekends 12:00 PM–8:00 PM</div>
+              </div>
+
+              <div>
+                <div className="fw-semibold">Text messages:</div>
+                <div className="text-muted">24/7 (responses ASAP or during office hours)</div>
+              </div>
+            </div>
             {/* === SOCIAL === */}
-            <div className="mt-4 text-md-end text-center">
-              <h6 className="text-dark mb-2 me-3">Find us on</h6>
+            <div className="mt-5 text-md-end text-center">
+              <h5 className="text-dark mb-2 me-3">Find us on</h5>
 
               <div className="d-inline-flex align-items-center gap-3 fs-4">
                 {/* LinkedIn */}
@@ -90,6 +113,42 @@ export default function AboutUsAndFooter() {
                   <i className="bi bi-tiktok d-inline-block" style={{ lineHeight: 1 }}></i>
 
                 </a>
+
+                {/* Instagram */}
+                <a
+                  href="https://www.instagram.com/myglassstyle/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="MyGlassStyle on Instagram"
+                  className="text-muted social-icon"
+                  title="Instagram"
+                >
+                  <i className="bi bi-instagram"></i>
+                </a>
+
+                {/* Facebook */}
+                <a
+                  href="https://www.facebook.com/people/My-Glass-Style-Professional-installation-and-service-in-NJ/61583030505649/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="MyGlassStyle on Facebook"
+                  className="text-muted social-icon"
+                  title="Facebook"
+                >
+                  <i className="bi bi-facebook"></i>
+                </a>
+
+                {/* Pinterest */}
+                <a
+                  href="https://www.pinterest.com/myglassstyle/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="MyGlassStyle on Pinterest"
+                  className="text-muted social-icon"
+                  title="Pinterest"
+                >
+                  <i className="bi bi-pinterest"></i>
+                </a>
               </div>
               {/* === LinkedIn profile previews + expandable badges === */}
               <LinkedInBadges />
@@ -104,7 +163,7 @@ export default function AboutUsAndFooter() {
         <div className="row">
           <div className="col-md-6 mb-5">
             <p className="mb-0 text-dark">
-              © <span className="mx-1">2025</span> MyGlassStyle | Kseniia Markiv. 
+              © <span className="mx-1">2026</span> MyGlassStyle | Kseniia Markiv. 
               <span className="ms-2">All rights reserved.</span>
             </p>
           </div>

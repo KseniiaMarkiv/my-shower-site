@@ -136,7 +136,7 @@ const CustomNavbar = () => {
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">
         <Nav className="ms-lg-5 text-secondary gap-lg-4">
           <Nav.Link as={HashLink} to="/#jumbotron" className="text-center" onClick={handleNavLinkClick}>Home</Nav.Link>
-          <Nav.Link as={HashLink} to="/#testimonials" className="text-center" onClick={handleNavLinkClick}>Testimonials</Nav.Link>
+          {/* <Nav.Link as={HashLink} to="/#testimonials" className="text-center" onClick={handleNavLinkClick}>Testimonials</Nav.Link> */}
 
           {/* Desktop Gallery dropdown */}
           <NavDropdown title="Gallery" id="gallery-dropdown" className="text-center fw-bold">
