@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Carousel, Container, Row, Col, Button } from 'react-bootstrap';
 import '../styles/JumbotronCarousel.css';
 
-function JumbotronCarousel({ slug }) {
+function JumbotronCarousel({ slug, children  }) {
   const [index, setIndex] = useState(0);
   const [slides, setSlides] = useState([]);
 
@@ -51,28 +51,38 @@ function JumbotronCarousel({ slug }) {
               loading="lazy"
             />
 
-            <Carousel.Caption className="jumbotron-caption">
-              <Container>
-                <Row className="justify-content-start">
-                  <Col lg={8} md={10}>
-                    <h1 className="fs-1 jumbotron-title mb-4">Residential & Commercial Tempered Glass Installation & Service in NJ</h1>
-                    <p className="jumbotron-text mb-4">
-                      Enhance the beauty and functionality of your home or business with our expert installation services.
-                      From showers to mirrors and railings, we bring your vision to life.
-                    </p>
-                    <div className="jumbotron-buttons">
-                      <Button variant="light" href="#how-it-works" className="btn-learn-more me-3">
-                        Learn More
-                      </Button>
-                      <a href="mailto:myglassstyle@gmail.com">
-                        <Button variant="outline-light" className="btn-contact-us">
-                          Contact
+            <Carousel.Caption className={`jumbotron-caption ${children ? "jumbotron-caption--custom" : ""}`}>
+              {children ? (
+                <div className="jumbotron-custom-content">
+                  {children}
+                </div>
+              ) : (
+                <Container>
+                  <Row className="justify-content-start">
+                    <Col lg={8} md={10}>
+                      <h1 className="jumbotron-title">
+                        Residential & Commercial Tempered Glass Installation & Service in NJ
+                      </h1>
+
+                      <p className="jumbotron-text mb-4">
+                        Enhance the beauty and functionality of your home or business with our expert installation services.
+                        From showers to mirrors and railings, we bring your vision to life.
+                      </p>
+
+                      <div className="jumbotron-buttons">
+                        <Button variant="light" href="#how-it-works" className="btn-learn-more me-3">
+                          Learn More
                         </Button>
-                      </a>
-                    </div>
-                  </Col>
-                </Row>
-              </Container>
+                        <a href="mailto:myglassstyle@gmail.com">
+                          <Button variant="outline-light" className="btn-contact-us">
+                            Contact
+                          </Button>
+                        </a>
+                      </div>
+                    </Col>
+                  </Row>
+                </Container>
+              )}
             </Carousel.Caption>
           </Carousel.Item>
         ))}

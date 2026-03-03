@@ -10,6 +10,9 @@ import ScrollToTop from './components/ScrollToTop'
 import AboutUsAndFooter from './components/AboutUsAndFooter.jsx'
 
 import Home from './Home'
+import ConstructionPartnership from './ConstructionPartnership'
+import HomeownersAndIndividuals from './HomeownersAndIndividuals'
+import BuildersAndConstructionPartners from './BuildersAndConstructionPartners'
 const GalleryPage = lazy(() => import('./components/GalleryPage'));
 
 function SpinnerFallback() {
@@ -35,6 +38,9 @@ export default function App() {
     <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/referral-program" element={<ConstructionPartnership />} />
+      <Route path="/homeowners-and-individuals" element={<HomeownersAndIndividuals />} />
+      <Route path="/builders-and-construction-partners" element={<BuildersAndConstructionPartners />} />
     </Routes>
     <AboutUsAndFooter />
   </BrowserRouter>
