@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import HowItWorksSection from './referral/HowItWorksSection';
 import MoreDetailsSection from './referral/MoreDetailsSection';
+import FaqSection from './referral/FaqSection';
 
 import heroImage from "../assets/HomeownersAndIndividuals.jpg";
 import "../styles/ConstructionPartnership.css";
@@ -60,6 +61,8 @@ export default function HomeownersAndIndividuals() {
         <HowItWorksSection />
         <MoreDetailsSection />
       </div>
+
+      <FaqSection />
     </div>
   );
 }

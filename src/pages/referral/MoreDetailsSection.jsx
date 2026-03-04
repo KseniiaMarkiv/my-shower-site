@@ -59,7 +59,7 @@ export default function MoreDetailsSection() {
         <li>other custom glass projects</li>
       </ul>
 
-      <p>Both <strong>residential and commercial projects</strong> may qualify.</p>
+      <p>Both <strong>residential and commercial projects</strong> qualify.</p>
 
       <h3>When Do I Receive the Reward?</h3>
 

@@ -127,3 +127,48 @@
   border-left:4px solid #0d6efd;
   border-radius:6px;
 }
+
+/* FAQ Section */
+
+.faq-section{
+  background:#343a40;
+}
+
+.faq-accordion .accordion-item{
+  background:#3b4248;
+  border: none;
+}
+
+.faq-accordion .accordion-button{
+  background:#3b4248;
+  color:#c8c8c8;
+}
+
+.faq-accordion .accordion-body{
+  background:#3b4248;
+  color: rgba(255,255,255,0.9);
+}
+
+.faq-accordion .accordion-button::after{
+  filter: invert(1);
+}
+
+.faq-accordion .accordion-button:not(.collapsed){
+  background-color:#7a8087;
+  color:#fff;
+}
+
+/* body відкритого item */
+.faq-accordion .accordion-item:has(.accordion-button:not(.collapsed)) .accordion-body{
+  background-color:#7a8087;
+  color:#fff;
+}
+
+.faq-accordion .accordion-button:focus {
+  box-shadow: 0 0 0 2px #ffc1077d;
+  border-color: #ffc1077d;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+  border-color: #ffc1077d;
+}
