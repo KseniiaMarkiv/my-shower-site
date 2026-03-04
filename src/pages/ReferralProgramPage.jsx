@@ -8,7 +8,7 @@ import houseIcon from "../assets/120x83house.png";
 import commerceIcon from "../assets/120x120commerce.png";
 
 
-export default function ConstructionPartnership() {
+export default function ReferralProgramPage() {
   return (
   <div>
     <JumbotronCarousel slug="Jumbotron">

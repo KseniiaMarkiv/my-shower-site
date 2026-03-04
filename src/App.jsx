@@ -10,7 +10,7 @@ import ScrollToTop from './components/ScrollToTop'
 import AboutUsAndFooter from './components/AboutUsAndFooter.jsx'
 
 import Home from './Home'
-import ConstructionPartnership from './pages/ConstructionPartnership'
+import ReferralProgramPage from './pages/ReferralProgramPage'
 import HomeownersAndIndividuals from './pages/HomeownersAndIndividuals'
 import BuildersAndConstructionPartners from './pages/BuildersAndConstructionPartners'
 const GalleryPage = lazy(() => import('./components/GalleryPage'));
@@ -38,7 +38,7 @@ export default function App() {
     <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/referral-program" element={<ConstructionPartnership />} />
+      <Route path="/referral-program" element={<ReferralProgramPage />} />
       <Route path="/homeowners-and-individuals" element={<HomeownersAndIndividuals />} />
       <Route path="/builders-and-construction-partners" element={<BuildersAndConstructionPartners />} />
     </Routes>

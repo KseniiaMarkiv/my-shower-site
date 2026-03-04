@@ -19,9 +19,10 @@
 
 .referral-hero-img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
   filter: brightness(55%);
+  display: block;
 }
 
 .referral-hero-overlay {
@@ -54,6 +55,10 @@
   font-style: normal;
 }
 
+.referral-sections {
+  background: #fff;
+}
+
 /* Shared hero button style */
 .hero-btn-group {
   text-align: left;
@@ -83,4 +88,31 @@
   .hero-btn-group .btn {
     width: 100%;
   }
+}
+
+/* scrolling smooth */
+
+#how-it-works,
+#home-ref-details {
+  scroll-margin-top: 90px;
+}
+
+.blockquote-custom {
+  text-align: justify;
+  font-size: 0.9rem;
+}
+
+.typing-cursor {
+  animation: blink 1s infinite;
+  margin-left: 3px;
+}
+
+.typing-text {
+  white-space: pre-line;
+}
+
+@keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
 }
