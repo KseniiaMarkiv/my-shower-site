@@ -116,3 +116,14 @@
   50% {opacity: 0;}
   100% {opacity: 1;}
 }
+
+/* MoreDetailsSection.jsx */
+
+.info-card{
+  margin: 20px 0;
+  padding: 16px 18px;
+  background:#f8f9fa;
+  border:1px solid #dee2e6;
+  border-left:4px solid #0d6efd;
+  border-radius:6px;
+}

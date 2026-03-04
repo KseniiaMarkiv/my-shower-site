@@ -20,7 +20,7 @@ export default function HowItWorksSection() {
           </p>
 
           <p className="mb-0">
-            👉 If someone you know is planning a glass project (shower
+            👉 If someone you know is planning a tempered glass project (shower
             installation, glass railing, mirrors, shelving, or other custom glass
             work) you can simply <strong class="fw-bold"> send us their contact information. </strong>
           </p>
