@@ -118,6 +118,20 @@
 .bounce-anim:hover {
   animation: iconBounce 0.6s ease;
 }
+
+/* default grayscale */
+.jumbotron-section--child .jumbotron-img,
+.jumbotron-section--child .jumbotron-video {
+  filter: grayscale(1);
+  transition: filter 0.3s ease-in-out; /* important */
+}
+
+/* keep color while hovering anywhere on the slide */
+.jumbotron-section--child .carousel-item:hover .jumbotron-img,
+.jumbotron-section--child .carousel-item:hover .jumbotron-video {
+  filter: grayscale(0);
+}
+
 /* animation */
 
 /* Trigger on hover */
@@ -157,7 +171,7 @@
   height: 100vh;
   object-fit: cover;
   object-position: center;
-  filter: brightness(40%);
+  filter: brightness(60%);
   transition: all 0.3s ease-in-out;
 }
 

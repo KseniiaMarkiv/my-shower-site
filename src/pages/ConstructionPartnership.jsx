@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import JumbotronCarousel from './components/JumbotronCarousel';
-import'./styles/ConstructionPartnership.css';
+import JumbotronCarousel from '../components/JumbotronCarousel';
+import '../styles/ConstructionPartnership.css';
 
-import houseIcon from "./assets/120x83house.png";
-import commerceIcon from "./assets/120x120commerce.png";
+import houseIcon from "../assets/120x83house.png";
+import commerceIcon from "../assets/120x120commerce.png";
 
 
 export default function ConstructionPartnership() {

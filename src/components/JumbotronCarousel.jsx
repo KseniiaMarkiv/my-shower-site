@@ -40,7 +40,7 @@ function JumbotronCarousel({ slug, children  }) {
   }, [slug]);
 
   return (
-    <div id="jumbotron" className="jumbotron-section">
+    <div id="jumbotron" className={`jumbotron-section ${children ? "jumbotron-section--child" : ""}`}>
       <Carousel activeIndex={index} onSelect={handleSelect} fade controls={false} indicators={false}>
         {slides.map((slide, i) => (
           <Carousel.Item key={i} interval={5000}>

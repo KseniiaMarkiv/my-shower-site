@@ -1,7 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Milonga&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 .construction-hero .row {
   justify-content: center;
 }
 
 .construction-hero .col-md-6 {
   text-align: center;
+}
+
+/* HomeownersAndIndividuals.jsx */
+
+.referral-hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.referral-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(55%);
+}
+
+.referral-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: clamp(20px, 6vw, 100px);
+  padding-right: 20px;
+}
+
+.referral-hero-content {
+  max-width: 750px;
+  color: white;
+}
+
+.referral-hero-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  margin-bottom: 6rem;
+}
+
+.referral-hero-subtitle {
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  line-height: 1.5;
+  opacity: 0.95;
+  font-family: "Milonga", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Shared hero button style */
+.hero-btn-group {
+  text-align: left;
+}
+
+.hero-btn-group .btn {
+  border-radius: 0;
+  font-weight: 600;
+  font-size: clamp(0.7rem, 1.3vw, 0.8rem);
+  padding: 0.4rem 1.5rem;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.hero-btn-group .btn:hover {
+  background-color: #ffffff7e;
+  color: #343434;
+}
+
+@media (max-width: 576px) {
+  .hero-btn-group {
+    flex-direction: column !important;
+    align-items: stretch;
+    gap: 0.1rem !important;
+  }
+
+  .hero-btn-group .btn {
+    width: 100%;
+  }
 }

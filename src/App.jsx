@@ -10,9 +10,9 @@ import ScrollToTop from './components/ScrollToTop'
 import AboutUsAndFooter from './components/AboutUsAndFooter.jsx'
 
 import Home from './Home'
-import ConstructionPartnership from './ConstructionPartnership'
-import HomeownersAndIndividuals from './HomeownersAndIndividuals'
-import BuildersAndConstructionPartners from './BuildersAndConstructionPartners'
+import ConstructionPartnership from './pages/ConstructionPartnership'
+import HomeownersAndIndividuals from './pages/HomeownersAndIndividuals'
+import BuildersAndConstructionPartners from './pages/BuildersAndConstructionPartners'
 const GalleryPage = lazy(() => import('./components/GalleryPage'));
 
 function SpinnerFallback() {
