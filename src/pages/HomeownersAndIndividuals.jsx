@@ -3,8 +3,8 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
-import HowItWorksSection from './referral/HowItWorksSection';
-import MoreDetailsSection from './referral/MoreDetailsSection';
+import HomeownersHowItWorksSection from './referral/HomeownersHowItWorksSection';
+import MoreDetailsSection from './referral/HomeownersMoreDetailsSection';
 import FaqSection from './referral/FaqSection';
 
 import heroImage from "../assets/HomeownersAndIndividuals.jpg";
@@ -58,7 +58,7 @@ export default function HomeownersAndIndividuals() {
       </div>
 
       <div className="referral-sections">
-        <HowItWorksSection />
+        <HomeownersHowItWorksSection />
         <MoreDetailsSection />
       </div>
 

@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 
-export default function MoreDetailsSection() {
+export default function HomeownersMoreDetailsSection() {
   return (
     <section id="home-ref-details" className="container py-5">
       <hr></hr>
@@ -24,7 +24,9 @@ export default function MoreDetailsSection() {
         <li><strong>$7,000+ project → 10% reward</strong></li>
       </ul>
 
-      <p>The larger the project, the higher your reward.</p>
+      <div className="info-card mb-5 mt-4 bounce-anim">
+        💡The larger the project, the higher your reward.
+      </div>
 
       <h3>Example Referral Rewards</h3>
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import TypeOnScroll from "../../components/TypeOnScroll";
 
-export default function HowItWorksSection() {
+export default function HomeownersHowItWorksSection() {
   return (
     <section id="how-it-works" className="container py-5">
       <div className="mt-4">

@@ -25,9 +25,9 @@ export default function FaqSection() {
           <Accordion.Item eventKey="2">
             <Accordion.Header>Is There a Limit?</Accordion.Header>
             <Accordion.Body>
-              <p>No. You can submit <strong class="badge rounded-pill text-bg-dark">as many referrals as you like</strong>.</p>
+              <p>No. You can submit <strong class="badge-wrap rounded-pill text-bg-dark">as many referrals as you like</strong>.</p>
               <p className="mb-0">
-                Many people naturally know <strong class="badge rounded-pill text-bg-dark">friends, neighbors, coworkers, builders, or property owners</strong>{" "}
+                Many people naturally know <strong class="badge-wrap rounded-pill text-bg-dark">friends, neighbors, coworkers, builders, or property owners</strong>{" "}
                 who may need glass installation.
               </p>
             </Accordion.Body>
@@ -37,7 +37,7 @@ export default function FaqSection() {
             <Accordion.Header>When Do I Receive the Reward and How Is It Paid?</Accordion.Header>
             <Accordion.Body>
               <p>
-                Referral rewards are sent <strong class="badge rounded-pill text-bg-dark">after the project is completed and fully paid</strong>.
+                Referral rewards are sent <strong class="badge-wrap rounded-pill text-bg-dark">after the project is completed and fully paid</strong>.
               </p>
 
               <p className="mb-2">You can receive your payment via:</p>
@@ -47,7 +47,7 @@ export default function FaqSection() {
                 <li>Bank Transfer (ACH) — any transfer fees are the responsibility of the recipient.</li>
               </ul>
 
-              <div className="mt-2"> <span class="badge rounded-pill text-bg-dark">  You can contact us anytime</span> to ask about the project progress or status. </div>
+              <div className="mt-2"> <span class="badge-wrap rounded-pill text-bg-dark">  You can contact us anytime</span> to ask about the project progress or status. </div>
             </Accordion.Body>
           </Accordion.Item>
 
@@ -55,7 +55,7 @@ export default function FaqSection() {
             <Accordion.Header>What Projects Qualify?</Accordion.Header>
             <Accordion.Body>
               <p>
-                Referral rewards apply to all <strong class="badge rounded-pill text-bg-dark">tempered glass installations</strong>, including:
+                Referral rewards apply to all <strong class="badge-wrap rounded-pill text-bg-dark">tempered glass installations</strong>, including:
               </p>
 
               <ul>
@@ -68,7 +68,7 @@ export default function FaqSection() {
               </ul>
 
               <p className="mb-0">
-                Both <strong class="badge rounded-pill text-bg-dark">residential and commercial projects qualify</strong>.
+                Both <strong class="badge-wrap rounded-pill text-bg-dark">residential and commercial projects qualify</strong>.
               </p>
             </Accordion.Body>
           </Accordion.Item>
@@ -78,8 +78,8 @@ export default function FaqSection() {
             <Accordion.Body>
               <p>No problem.</p>
               <p className="mb-0">
-                If the project includes <strong class="badge rounded-pill text-bg-dark">multiple showers, railings, mirrors, or other glass installations</strong>,
-                the reward is calculated based on the <strong class="badge rounded-pill text-bg-dark">total project value</strong>.
+                If the project includes <strong class="badge-wrap rounded-pill text-bg-dark">multiple showers, railings, mirrors, or other glass installations</strong>,
+                the reward is calculated based on the <strong class="badge-wrap rounded-pill text-bg-dark">total project value</strong>.
               </p>
             </Accordion.Body>
           </Accordion.Item>
@@ -88,12 +88,12 @@ export default function FaqSection() {
             <Accordion.Header>Will you pressure or spam the person I refer?</Accordion.Header>
             <Accordion.Body>
               <p>
-                No. We contact your referral <strong class="badge rounded-pill text-bg-dark">only to discuss their project and answer their questions</strong>.
+                No. We contact your referral <strong class="badge-wrap rounded-pill text-bg-dark">only to discuss their project and answer their questions</strong>.
               </p>
               <p>
                 If they decide not to move forward, there is no obligation and no follow-up pressure.
               </p>
-              <span class="badge rounded-pill text-bg-light text-dark-emphasis">
+              <span class="badge-wrap rounded-pill text-bg-light text-dark-emphasis">
                 We respect people’s time and treat every referral professionally.
               </span>
             </Accordion.Body>
