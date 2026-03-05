@@ -21,7 +21,7 @@ Your question (optional):`;
 const MAIL_URL = `${MAIL_TO}?subject=${encodeURIComponent(SUBJECT)}&body=${encodeURIComponent(BODY)}`;
 
 
-const QuoteSection = ({ id }) => {
+const QuoteSection = ({ id = "quote" }) => {
   return (
     <section id={id} className="quote-section py-5 bg-dark text-white d-flex align-items-center">
       <Container>

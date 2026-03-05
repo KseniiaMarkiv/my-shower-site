@@ -153,7 +153,7 @@ const CustomNavbar = () => {
             ))}
           </NavDropdown>
 
-          <Nav.Link as={HashLink} to="#about-us" className="text-center" onClick={handleNavLinkClick}>Contact Us</Nav.Link>
+          <Nav.Link as={HashLink} to="/#about-us" className="text-center" onClick={handleNavLinkClick}>Contact Us</Nav.Link>
 
           <NavDropdown title="More Options" id="more-options-dropdown" className="text-center">
             <NavDropdown.Item as={HashLink} to="/#services-short" className="text-center" onClick={handleNavLinkClick}>Installation Types</NavDropdown.Item>
@@ -167,7 +167,8 @@ const CustomNavbar = () => {
         {/* Buttons */}
         <Nav className="ms-lg-auto my-sm-3 my-lg-0 pe-lg-5 nav-button">
           <Button
-            href="#quote"
+            as={HashLink}
+            to="/#quote"
             variant="outline-dark"
             className="custom-estimate-button me-lg-2 px-4 py-1 border border-gray-400 text-sm rounded-0"
             onClick={handleNavLinkClick}
