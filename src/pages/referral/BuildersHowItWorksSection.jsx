@@ -1,4 +1,6 @@
 import React from "react";
+import TypeOnScroll from "../../components/TypeOnScroll";
+import { Button } from "react-bootstrap";
 
 export default function BuildersHowItWorksSection() {
   return (
@@ -115,6 +117,22 @@ export default function BuildersHowItWorksSection() {
           </div>
         </div>
 
+      </div>
+
+      <div className="mt-4 p-4 border shadow-sm">
+        <h3 className="h5 mb-3">Want to see how contractor rewards and partnership benefits work?</h3>
+        <p className="mb-0">
+          👉 Click{" "}
+          <Button
+            href="#builder-more-details"
+            variant="dark"
+            className="bounce-anim py-1 px-3 mx-2"
+            style={{ borderRadius: 0 }}
+          >
+            More Details
+          </Button>{" "}
+          - you’ll find referral percentages, partnership benefits, and project examples.
+        </p>
       </div>
 
     </section>
