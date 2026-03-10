@@ -166,7 +166,7 @@ const CustomNavbar = () => {
               <NavDropdown.Item as={HashLink} to="/#how-it-works" className="text-center" onClick={handleNavLinkClick}>How It Works</NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link as={HashLink} to="/referral-program" className="text-center" onClick={handleNavLinkClick}>Partnership</Nav.Link>
+            <Nav.Link as={HashLink} to="/referral-program/#jumbotron" className="text-center" onClick={handleNavLinkClick}>Partnership</Nav.Link>
           </Nav>
 
           {/* Buttons */}
