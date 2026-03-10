@@ -8,6 +8,7 @@ import './styles/App.css'
 import CustomNavbar from './components/Navbar'
 import ScrollToTop from './components/ScrollToTop'
 import AboutUsAndFooter from './components/AboutUsAndFooter.jsx'
+import QuoteSection from './components/QuoteSection.jsx';
 
 import Home from './Home'
 import ReferralProgramPage from './pages/ReferralProgramPage'
@@ -42,6 +43,7 @@ export default function App() {
       <Route path="/homeowners-and-individuals" element={<HomeownersAndIndividuals />} />
       <Route path="/builders-and-construction-partners" element={<BuildersAndConstructionPartners />} />
     </Routes>
+    <QuoteSection id="quote" />
     <AboutUsAndFooter />
   </BrowserRouter>
   )

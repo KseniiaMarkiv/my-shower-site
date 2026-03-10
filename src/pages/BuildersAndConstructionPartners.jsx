@@ -51,6 +51,15 @@ export default function BuildersAndConstructionPartners() {
               >
                 More Details
               </Button>
+
+              <Button
+                as={Link}
+                to="/homeowners-and-individuals"
+                variant="light"
+                className="bounce-anim mt-3"
+              >
+                Homeowners & Individuals
+              </Button>
             </div>
           </div>
         </div>

@@ -68,7 +68,7 @@ export default function Home() {
         showButtons={true}
       />
       <PortfolioSection id="portfolio" />
-      <QuoteSection id="quote" />
+      {/* <QuoteSection id="quote" /> */}
     </>
   );
 }
