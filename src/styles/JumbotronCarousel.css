@@ -61,7 +61,6 @@
 .jumbotron-custom-content .jumbotron-title {
   font-size: clamp(2.2rem, 3.2vw, 3.4rem);
   line-height: 1.08;
-  margin-bottom: 16px;
   margin-bottom: 6rem;
 }
 
@@ -203,7 +202,21 @@
         /* Media Queries */
 
 @media (max-width: 768px) {
+  .jumbotron-section--child .jumbotron-img,
+  .jumbotron-section--child .jumbotron-video {
+    filter: grayscale(0);
+    transition: filter 0.3s ease-in-out; /* important */
+  }
+
   .jumbotron-caption {
     left: 2%;
+  }
+
+  .jumbotron-custom-content .jumbotron-title {
+    margin-bottom: 1rem;
+  }
+
+  .jumbotron-caption {
+    top: 40%;
   }
 }
