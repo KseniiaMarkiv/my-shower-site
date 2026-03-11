@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom'
+import ReferralProgramPage from '../pages/ReferralProgramPage';
+
+
 export default function AnnouncementBar() {
   const announcementText = (
     <>
@@ -15,7 +19,7 @@ export default function AnnouncementBar() {
   );
 
   return (
-    <a href="http://localhost:5173/referral-program" className="announcement-bar-link">
+    <Link to="/referral-program" target="_blank" className="announcement-bar-link">
       <div className="announcement-bar">
         {/* Desktop: existing cycle animation */}
         <div className="announcement-track announcement-cycle announcement-desktop">
@@ -30,6 +34,6 @@ export default function AnnouncementBar() {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
