@@ -26,6 +26,12 @@
   height: 100vh;
 }
 
+.jumbotron-img {
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Custom caption: full width, left aligned, consistent line */
 .jumbotron-caption--custom {
   left: 0 !important;
@@ -55,6 +61,7 @@
 .jumbotron-custom-content .jumbotron-title {
   font-size: clamp(2.2rem, 3.2vw, 3.4rem);
   line-height: 1.08;
+  margin-bottom: 16px;
   margin-bottom: 6rem;
 }
 
@@ -159,53 +166,14 @@
   max-width: 600px;
 }
 
-.jumbotron-media {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.jumbotron-media::before {
-  content: "";
-  position: absolute;
-  inset: -30px;
-  background-image: var(--bg-image);
-  background-size: cover;
-  background-position: center;
-  filter: blur(18px) brightness(55%);
-  transform: scale(1.08);
-  z-index: 0;
-}
-
 .jumbotron-img,
 .jumbotron-video {
-  position: relative;
-  z-index: 1;
-  width: 100%;
   height: 100vh;
-  transition: all 0.3s ease-in-out;
-  filter: brightness(60%);
-}
-
-.jumbotron-img--local {
-  object-fit: scale-down;
-  object-position: center;
-}
-
-.jumbotron-img--remote {
   object-fit: cover;
   object-position: center;
+  filter: brightness(60%);
+  transition: all 0.3s ease-in-out;
 }
-
-@media (max-width: 768px) {
-  .jumbotron-img--local {
-    object-fit: scale-down;
-    object-position: center top;
-  }
-}
-
-
 
 .jumbotron-img:hover,
 .jumbotron-video:hover {
@@ -235,21 +203,7 @@
         /* Media Queries */
 
 @media (max-width: 768px) {
-  .jumbotron-section--child .jumbotron-img,
-  .jumbotron-section--child .jumbotron-video {
-    filter: grayscale(0);
-    transition: filter 0.3s ease-in-out; /* important */
-  }
-
   .jumbotron-caption {
     left: 2%;
   }
-
-  .jumbotron-custom-content .jumbotron-title {
-    margin-bottom: 1rem;
-  }
-
-  /* .jumbotron-caption {
-    top: 40%;
-  } */
 }
