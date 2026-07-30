@@ -159,7 +159,7 @@ const CustomNavbar = () => {
             <Nav.Link as={HashLink} to="/#about-us" className="text-center" onClick={handleNavLinkClick}>Contact Us</Nav.Link>
 
             <NavDropdown title="More Options" id="more-options-dropdown" className="text-center">
-              <NavDropdown.Item as={HashLink} to="/#services-short" className="text-center" onClick={handleNavLinkClick}>Installation Types</NavDropdown.Item>
+              {/* <NavDropdown.Item as={HashLink} to="/#services-short" className="text-center" onClick={handleNavLinkClick}>Installation Types</NavDropdown.Item> */}
               <NavDropdown.Item as={HashLink} to="/#services-professional" className="text-center" onClick={handleNavLinkClick}>Our Services</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item as={HashLink} to="/#portfolio" className="text-center" onClick={handleNavLinkClick}>Our Works</NavDropdown.Item>

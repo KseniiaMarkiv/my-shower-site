@@ -59,14 +59,14 @@ export default function Home() {
       />
       <HowItWorksSection />
       {/* <TestimonialSection id="testimonials" /> */}
-      <ServicesSection
+      {/* <ServicesSection
         id="services-short"
         className="py-5 my-5"
         title="Explore Our Installation Services"
         subtitle="Transform your space with our expert installation services. From showers to mirrors and railings, we bring your vision to life."
         services={mainServices}
         showButtons={true}
-      />
+      /> */}
       <PortfolioSection id="portfolio" />
       {/* <QuoteSection id="quote" /> */}
     </>
