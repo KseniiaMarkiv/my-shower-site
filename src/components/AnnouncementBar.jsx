@@ -1,25 +1,27 @@
 import { Link } from 'react-router-dom'
 
-// WhatsApp April Installation
+// WhatsApp August Installation
 const WA_PHONE = '18483528480';
-const WA_TEXT  = "Hi, I'd like to reserve an April installation spot. My ZIP code is ";
+const WA_TEXT  = "Hi, I'd like to reserve an August installation spot. My ZIP code is ";
 const WA_URL   = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(WA_TEXT)}`;
 
 export default function AnnouncementBar() {
 const topText = (
   <>
     <span className="announcement-desktop-text">
-      Early April Installation Openings
+      Early August Installation Openings
       <span className="announcement-dot">•</span>
-      April 2–4
+      August 14–16
       <span className="announcement-dot">•</span>
-      April 6–8
+      Early Free Visit Openings
+      <span className="announcement-dot">•</span>
+      Every Fr, Sa, Su
       <span className="announcement-dot">•</span>
       Contact Us Now to Secure a Spot
     </span>
 
     <span className="announcement-mobile-text">
-      Early April Openings
+      Early August Openings
       <span className="announcement-dot">•</span>
       Tap to Reserve
     </span>
@@ -30,8 +32,8 @@ const topText = (
     <>
       <span>Know Someone Planning a Glass Project?</span>
       <span className="announcement-dot">•</span>
-      <span>MyGlassStyle Partnership Program</span>
-      <span className="announcement-dot">•</span>
+      {/* <span>MyGlassStyle Partnership Program</span>
+      <span className="announcement-dot">•</span> */}
       <span>Homeowners Welcome</span>
       <span className="announcement-dot">•</span>
       <span>Contractors Welcome</span>
