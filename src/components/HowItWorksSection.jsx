@@ -9,7 +9,7 @@ const steps = [
   },
   {
     title: 'Schedule Measurement',
-    description: 'We agree on a suitable time and send a technician for accurate measurements.',
+    description: 'After your online estimate is approved and tile work is completed, we schedule a free measurement visit.',
     icon: 'bi-calendar-event',
   },
   {
@@ -23,8 +23,8 @@ const steps = [
     icon: 'bi-cash-coin',
   },
   {
-    title: 'Production (7 Business Days)',
-    description: 'Your custom order goes into production. Takes approx. 7 business days.',
+    title: 'Production (3-12 Business Days)',
+    description: 'Custom glass: 9–12 business days. Sliding shower doors: 3–7 business days.',
     icon: 'bi-tools',
   },
   {
@@ -34,7 +34,7 @@ const steps = [
   },
   {
     title: 'Final Payment & Satisfaction',
-    description: 'Pay the remaining 50% after you approve the final result.',
+    description: 'Pay the remaining 50% after the installation is completed.',
     icon: 'bi-hand-thumbs-up',
   },
 ];
